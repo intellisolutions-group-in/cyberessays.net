@@ -1,0 +1,652 @@
+.fintechPage {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-highlight);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Pipeline Map Card */
+.pipelineCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.pipelineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Routing Nodes */
+.nodesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.node {
+  background: rgba(4, 8, 20, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.nodeActive {
+  border-color: var(--accent-highlight);
+  background: rgba(255, 107, 107, 0.05);
+  transform: translateX(4px);
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.1);
+}
+
+.nodeTitleBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nodeNum {
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.nodeActive .nodeNum {
+  color: var(--accent-highlight);
+}
+
+.nodeText {
+  display: flex;
+  flex-direction: column;
+}
+
+.nodeName {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.nodeDesc {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
+.nodeStatus {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.nodeActive .nodeStatus {
+  color: var(--accent-highlight);
+}
+
+.sendBtn {
+  background: var(--accent-highlight);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.sendBtn:hover:not(:disabled) {
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+  transform: translateY(-1px);
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Side Info Panel */
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sideCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Receipt ticket print panel */
+.receiptBox {
+  background: #FFFFFF;
+  color: #0b031a;
+  border-radius: var(--border-radius-sm);
+  padding: 1.5rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.receiptBoxPrinted {
+  max-height: 320px;
+  opacity: 1;
+}
+
+.receiptTitle {
+  text-align: center;
+  font-weight: 800;
+  border-bottom: 1px dashed #0b031a;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.receiptTotal {
+  border-top: 1px dashed #0b031a;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  font-weight: 800;
+}
+
+/* Side Metrics List */
+.statsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.statItem {
+  background: rgba(4, 8, 20, 0.4);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.statVal {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #FFFFFF 50%, var(--accent-highlight) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statLabel {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* Case study section */
+.caseStudySection {
+  background: rgba(13, 18, 37, 0.2);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.caseCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top right, rgba(255, 107, 107, 0.04), transparent 70%), rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(255, 107, 107, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: 3.5rem;
+}
+
+/* Main top split grid */
+.mainSplitGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Testimonials two-column grid */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .mainSplitGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .methodTimeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .fintechPage {
+    padding: 6rem 0 4rem;
+  }
+
+  .titleBlock {
+    margin-bottom: 2.5rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .desc {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .mainSplitGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .pipelineCard {
+    padding: 1.5rem;
+  }
+
+  .caseCard {
+    padding: 2rem 1.25rem;
+  }
+
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .methodTimeline {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fintechPage {
+    padding: 5rem 0 3rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+
+  .pipelineCard {
+    padding: 1.25rem;
+  }
+
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .caseCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .featureCard {
+    padding: 1.25rem;
+  }
+
+  .featureTitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Technical Specs Section */
+.specsSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: rgba(4, 8, 20, 0.2);
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.sectionTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-highlight);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.sectionDesc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.75rem auto 0;
+  line-height: 1.5;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.specCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.specCard:hover {
+  border-color: rgba(255, 107, 107, 0.25);
+  transform: translateY(-2px);
+  background: rgba(13, 18, 37, 0.5);
+}
+
+.specTitle {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.specValue {
+  font-family: var(--font-primary);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.specDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.methodologySection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: var(--bg-primary);
+}
+
+.methodTimeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.methodStep {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.stepNum {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-highlight) 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .methodTimeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+  .methodTimeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Architectural Features Section */
+.featuresSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: rgba(4, 8, 20, 0.15);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.featureCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featureCard:hover {
+  border-color: rgba(239, 68, 68, 0.25);
+  transform: translateY(-4px);
+  background: rgba(13, 18, 37, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.featureIcon {
+  color: var(--accent-highlight);
+  display: inline-flex;
+}
+
+.featureTitle {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.featureDesc {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.featureSpecs {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.featureSpecItem {
+  font-family: monospace;
+  font-size: 0.725rem;
+  color: var(--accent-highlight);
+  background: rgba(239, 68, 68, 0.03);
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid rgba(239, 68, 68, 0.08);
+}
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .featureCard {
+    padding: 1.75rem;
+  }
+}
+
+

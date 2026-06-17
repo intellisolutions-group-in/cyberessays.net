@@ -1,0 +1,511 @@
+.saasPage {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Bento Grid */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.bentoCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.bentoCard:hover {
+  border-color: rgba(6, 182, 212, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4);
+}
+
+.col12 { grid-column: span 12; }
+.col8 { grid-column: span 8; }
+.col4 { grid-column: span 4; }
+.col6 { grid-column: span 6; }
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Interactive Simulator */
+.simulationBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chartContainer {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.simControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(4, 8, 20, 0.4);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  border: var(--border-light);
+}
+
+.simBtn {
+  background: var(--accent-secondary);
+  color: #040814;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.simBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.35);
+}
+
+/* Mini Metrics */
+.metricsRow {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.metricItem {
+  flex: 1;
+  background: rgba(4, 8, 20, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.metricVal {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #FFFFFF 50%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metricLabel {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* Warnings and fixes */
+.warnList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.warnItem {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 107, 107, 0.02);
+  border: 1px solid rgba(255, 107, 107, 0.08);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.warnItem:hover {
+  border-color: rgba(255, 107, 107, 0.2);
+  background: rgba(255, 107, 107, 0.04);
+}
+
+.warnIcon {
+  color: var(--accent-highlight);
+  margin-top: 0.15rem;
+}
+
+.warnTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.warnDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+
+/* Step Flow nodes widget */
+.stepFlow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stepNode {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.stepNodeActive {
+  border-color: var(--accent-primary);
+  background: rgba(124, 58, 237, 0.05);
+}
+
+.stepNum {
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.stepNodeActive .stepNum {
+  color: var(--accent-secondary);
+}
+
+.stepName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Case Study Call */
+.caseStudySection {
+  background: rgba(13, 18, 37, 0.2);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.caseCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.05), transparent 70%), rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: 3.5rem;
+}
+
+@media (max-width: 1024px) {
+  .col8, .col4 {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.5rem; }
+  .bentoGrid { gap: 1.25rem; }
+  .bentoCard { padding: 1.5rem; }
+  .metricsRow { flex-direction: column; gap: 1rem; }
+  .caseCard { padding: 2rem 1.25rem; }
+}
+
+/* Technical Specs Section */
+.specsSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: rgba(4, 8, 20, 0.2);
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.sectionTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.sectionDesc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.75rem auto 0;
+  line-height: 1.5;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.specCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.specCard:hover {
+  border-color: rgba(6, 182, 212, 0.25);
+  transform: translateY(-2px);
+  background: rgba(13, 18, 37, 0.5);
+}
+
+.specTitle {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.specValue {
+  font-family: var(--font-primary);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.specDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.methodologySection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: var(--bg-primary);
+}
+
+.methodTimeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.methodStep {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.stepNum {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .methodTimeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+  .methodTimeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Architectural Features Section */
+.featuresSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: rgba(4, 8, 20, 0.15);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.featureCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featureCard:hover {
+  border-color: rgba(6, 182, 212, 0.25);
+  transform: translateY(-4px);
+  background: rgba(13, 18, 37, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.featureIcon {
+  color: var(--accent-secondary);
+  display: inline-flex;
+}
+
+.featureTitle {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.featureDesc {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.featureSpecs {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.featureSpecItem {
+  font-family: monospace;
+  font-size: 0.725rem;
+  color: var(--accent-secondary);
+  background: rgba(6, 182, 212, 0.03);
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid rgba(6, 182, 212, 0.08);
+}
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .featureCard {
+    padding: 1.75rem;
+  }
+}
+
+

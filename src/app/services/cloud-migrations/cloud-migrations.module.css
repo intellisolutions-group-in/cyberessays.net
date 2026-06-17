@@ -1,0 +1,858 @@
+.pageWrapper {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Left: Interactive Sync Board */
+.simulatorCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Pipeline visualizer styling */
+.pipelineWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pipelineStep {
+  background: rgba(4, 8, 20, 0.4);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.stepActive {
+  border-color: rgba(124, 58, 237, 0.3);
+  background: rgba(124, 58, 237, 0.03);
+}
+
+.stepTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+
+.stepStatus {
+  font-family: monospace;
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+.stepStatusDone {
+  color: var(--accent-success);
+  font-weight: 700;
+}
+
+/* Dynamic logs terminal */
+.terminal {
+  background: #040814;
+  border: var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.775rem;
+  height: 120px;
+  overflow-y: auto;
+  color: #38bdf8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.logLine {
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.actionBtn {
+  background: #FFFFFF;
+  color: #040814;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionBtn:hover:not(:disabled) {
+  background: var(--accent-primary);
+  color: #040814;
+  transform: translateY(-1px);
+}
+
+.actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Right: Benefits Cards */
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.benefitsCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.benefitItem {
+  background: rgba(4, 8, 20, 0.4);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+}
+
+.benefitTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.benefitDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Case study section */
+.caseStudySection {
+  background: rgba(13, 18, 37, 0.2);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.caseCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.04), transparent 70%), rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: 3.5rem;
+}
+
+@media (max-width: 1024px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.5rem; }
+  .simulatorCard { padding: 1.5rem; }
+  .benefitsCard { padding: 1.5rem; }
+  .caseCard { padding: 2rem 1.25rem; }
+}
+
+/* Additional Specs & Methodology sections */
+.specsSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.sectionTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Systems Properties Table */
+.propertiesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: rgba(13, 18, 37, 0.2);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.tableHeader {
+  background: rgba(13, 18, 37, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tableHeader th {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.tableRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.2s ease;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.tableCellLabel {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.tableCellDesc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.methodologySection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+}
+
+/* Alternating Vertical Timeline */
+.verticalTimelineContainer {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 2rem 0;
+}
+
+.verticalTimelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+.verticalStep {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.verticalStep:last-child {
+  margin-bottom: 0;
+}
+
+.stepContentLeft {
+  grid-column: 1;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.stepContentRight {
+  grid-column: 2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.stepBadge {
+  background: rgba(13, 18, 37, 0.8);
+  border: 1px solid var(--accent-primary);
+  color: #FFFFFF;
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 0.85rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+}
+
+.verticalStep:nth-child(even) .stepBadge {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+.verticalStepCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  max-width: 360px;
+  transition: border-color 0.2s ease;
+}
+
+.verticalStepCard:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+}
+
+@media (max-width: 768px) {
+  .verticalTimelineLine {
+    left: 20px;
+    transform: none;
+  }
+  .verticalStep {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-left: 3rem;
+  }
+  .stepContentLeft, .stepContentRight {
+    grid-column: 1;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .stepBadge {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+}
+
+.migrationGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.regionNodeBtn {
+  position: absolute;
+  background: #050a1a;
+  border: 1px solid var(--accent-secondary);
+  border-radius: 20px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.65rem;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.regionNodeBtn:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: #fff;
+}
+
+.regionNodeBtnActive {
+  background: var(--accent-primary) !important;
+}
+
+.usEastNode {
+  left: 15px;
+  top: 35px;
+}
+
+.euCentralNode {
+  right: 15px;
+  top: 35px;
+}
+
+.apSouthNode {
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mapVisualContainer {
+  height: 180px;
+  position: relative;
+  border: 1px dashed rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globeIcon {
+  opacity: 0.1;
+  position: absolute;
+}
+
+.sandboxCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-xl);
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+  min-width: 0;
+}
+
+.sandboxHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sandboxTag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  letter-spacing: 0.1em;
+}
+
+.sandboxTitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 0.25rem;
+}
+
+.startMigrationBtn {
+  background: var(--accent-primary);
+  border: none;
+  border-radius: var(--border-radius-full);
+  padding: 0.6rem 1.5rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.startMigrationBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.startMigrationBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.migrationColumn {
+  background: #050a1a;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 1.25rem;
+  min-width: 0;
+}
+
+.migrationColumnTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.vmCard {
+  border-radius: 6px;
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.vmCardLegacy {
+  background: rgba(255, 107, 107, 0.04);
+  border: 1px solid rgba(255, 107, 107, 0.15);
+}
+
+.vmCardSyncing {
+  background: rgba(6, 182, 212, 0.06);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.vmCardCloud {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.vmHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.vmSub {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+}
+
+.logStreamContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.logStreamTitle {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.logStreamTerminal {
+  background: #040814;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--accent-secondary);
+  height: 120px;
+  overflow-y: auto;
+}
+
+.failoverPanel {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-xl);
+  padding: 2.5rem;
+  position: relative;
+  min-width: 0;
+}
+
+.failoverTag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  letter-spacing: 0.1em;
+}
+
+.failoverTitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.replicationPanel {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-xl);
+  padding: 2.5rem;
+  min-width: 0;
+}
+
+.replicationTag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+.replicationTitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.telemetryList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.telemetryRow {
+  background: #050a1a;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caseTitle {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+
+.caseDesc {
+  margin: 1.5rem auto;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+.caseLink {
+  padding: 0.85rem 2.25rem;
+}
+
+.migrationGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.failoverGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .migrationGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .failoverGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding: 6rem 0 4rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .desc {
+    font-size: 1rem;
+  }
+  .simulatorCard {
+    padding: 1.75rem;
+  }
+  .benefitsCard {
+    padding: 1.75rem;
+  }
+  .caseCard {
+    padding: 2.5rem 1.5rem;
+  }
+  .caseTitle {
+    font-size: 2rem;
+  }
+  .caseDesc {
+    font-size: 0.95rem;
+  }
+  .caseLink {
+    padding: 0.75rem 1.75rem;
+  }
+  .failoverPanel,
+  .replicationPanel {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .actionBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .desc {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  .migrationGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .simulatorCard {
+    padding: 1.25rem;
+  }
+  .benefitsCard {
+    padding: 1.25rem;
+  }
+  .caseCard {
+    padding: 2rem 1rem;
+  }
+  .caseTitle {
+    font-size: 1.6rem;
+  }
+  .failoverPanel,
+  .replicationPanel {
+    padding: 1.25rem;
+  }
+  .usEastNode {
+    left: 8px;
+  }
+  .euCentralNode {
+    right: 8px;
+  }
+}
+
+
+
+

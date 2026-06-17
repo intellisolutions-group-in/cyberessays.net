@@ -1,0 +1,553 @@
+.icedeployPage {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Split Grid Layout */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Left: Pipeline Dashboard */
+.controlPanel {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Vertical Timeline Track */
+.pipelineTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.pipelineTimeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 20px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+.timelineStep {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.stepActive {
+  opacity: 1;
+}
+
+.stepSuccess {
+  opacity: 1;
+}
+
+.stepNum {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #040814;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.stepActive .stepNum {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
+}
+
+.stepSuccess .stepNum {
+  border-color: var(--accent-success);
+  background: var(--accent-success);
+  color: #040814;
+}
+
+.stepInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+.stepDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Console logs terminal */
+.consoleLogs {
+  background: #040814;
+  border: var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.775rem;
+  height: 140px;
+  overflow-y: auto;
+  color: #a855f7;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.logLine {
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.logTime {
+  color: var(--text-secondary);
+}
+
+.logSuccess {
+  color: var(--accent-success);
+}
+
+/* Right: YAML Editor and Controls */
+.editorPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.editorCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.editorWindow {
+  background: #040814;
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 0.8rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.editorHeader {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: var(--border-light);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tab {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--accent-secondary);
+  padding-bottom: 0.25rem;
+}
+
+.editorContent {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow-x: auto;
+}
+
+.editorLine {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.lineNumber {
+  width: 20px;
+  color: rgba(255, 255, 255, 0.15);
+  text-align: right;
+  user-select: none;
+}
+
+.codeText {
+  white-space: pre;
+}
+
+/* Syntax Coloring */
+.comment { color: #6b7280; }
+.property { color: #06b6d4; }
+.value { color: #10b981; }
+.keyword { color: #a855f7; }
+.indent { display: inline-block; width: 1.5rem; }
+
+/* Control adjusters */
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: rgba(4, 8, 20, 0.4);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+}
+
+.controlHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.controlVal {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+.rangeInput {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-secondary);
+  transition: all 0.2s ease;
+}
+
+.rangeInput::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.actionBtn {
+  background: #FFFFFF;
+  color: #040814;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.actionBtn:hover:not(:disabled) {
+  background: var(--accent-secondary);
+  color: #040814;
+  transform: translateY(-1px);
+}
+
+.actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Case study section */
+.caseStudySection {
+  background: rgba(13, 18, 37, 0.2);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.caseCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.04), transparent 70%), rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: 3.5rem;
+}
+
+.regionBtn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.regionBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.regionBtnActive {
+  background: rgba(6, 182, 212, 0.1) !important;
+  border: 1px solid var(--accent-secondary) !important;
+  color: #FFFFFF !important;
+}
+
+.regionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.progressContainer {
+  margin-top: 1rem;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.dynamicReplicas {
+  color: #06B6D4 !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--accent-secondary);
+}
+
+.dynamicRegion {
+  color: #10B981 !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--accent-success);
+}
+
+.caseTitle {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+
+.caseDesc {
+  margin: 1.5rem auto;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+.caseLink {
+  padding: 0.85rem 2.25rem;
+}
+
+.editorHeaderSpacer {
+  width: 40px;
+}
+
+.regionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .icedeployPage {
+    padding: 6rem 0 4rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .desc {
+    font-size: 1rem;
+  }
+  .controlPanel {
+    padding: 1.75rem;
+  }
+  .editorCard {
+    padding: 1.75rem;
+  }
+  .caseCard {
+    padding: 2.5rem 1.5rem;
+  }
+  .caseTitle {
+    font-size: 2rem;
+  }
+  .caseDesc {
+    font-size: 0.95rem;
+  }
+  .caseLink {
+    padding: 0.75rem 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .actionBtn {
+    width: 100%;
+  }
+  .editorHeaderSpacer {
+    display: none;
+  }
+  .dots {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .desc {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  .controlPanel {
+    padding: 1.25rem;
+  }
+  .editorCard {
+    padding: 1.25rem;
+  }
+  .editorContent {
+    padding: 1rem;
+  }
+  .editorLine {
+    gap: 0.75rem;
+  }
+  .regionsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .caseCard {
+    padding: 2rem 1rem;
+  }
+  .caseTitle {
+    font-size: 1.6rem;
+  }
+}
+
+

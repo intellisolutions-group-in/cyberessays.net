@@ -1,0 +1,774 @@
+.pageWrapper {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-highlight);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+/* Left: Incident Response Cockpit */
+.cockpitCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Status Banner */
+.statusBanner {
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.statusBannerAlert {
+  background: rgba(255, 107, 107, 0.05);
+  border-color: var(--accent-highlight);
+  animation: bannerFlash 1.5s infinite;
+}
+
+.bannerMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.beacon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.beaconStable {
+  background-color: var(--accent-success);
+  box-shadow: 0 0 8px var(--accent-success);
+}
+
+.beaconAlert {
+  background-color: var(--accent-highlight);
+  box-shadow: 0 0 12px var(--accent-highlight);
+  animation: beaconPulse 1s infinite alternate;
+}
+
+.statusText {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+/* Action button */
+.triggerBtn {
+  background: linear-gradient(135deg, var(--accent-highlight) 0%, #ff5252 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(255, 107, 107, 0.3);
+}
+
+.triggerBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+}
+
+.triggerBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Monospace logs terminal */
+.terminal {
+  background: #040814;
+  border: var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 1.25rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  height: 150px;
+  overflow-y: auto;
+  color: #a855f7;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.logLine {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.logTime {
+  color: var(--accent-highlight);
+}
+
+/* Right side Intro details */
+.introDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.featurePillGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detailPill {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.detailPill:hover {
+  transform: translateX(5px);
+}
+
+.pillIcon {
+  color: var(--accent-primary);
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.detailPill h4 {
+  font-family: var(--font-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.detailPill p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* SLA Matrix section */
+.matrixSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: rgba(4, 8, 20, 0.3);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-highlight);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.sectionDesc {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.matrixContainer {
+  overflow-x: auto;
+  border: var(--border-glass);
+  border-radius: var(--border-radius-xl);
+  background: rgba(13, 18, 37, 0.4);
+  width: 100%;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.matrixTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 800px;
+}
+
+.matrixTable th,
+.matrixTable td {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.matrixTable th {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-primary);
+  vertical-align: bottom;
+}
+
+.metricColumn {
+  width: 25%;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.tierHeader {
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+
+.tierHeaderActive {
+  background: rgba(168, 85, 247, 0.06);
+  border-left: 1px solid rgba(168, 85, 247, 0.2);
+  border-right: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.recommendedBadge {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  letter-spacing: 0.05em;
+}
+
+.tierTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.tierSub {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+.tierSub span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.metricName {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.matrixTable td {
+  text-align: center;
+}
+
+.matrixTable td:first-child {
+  text-align: left;
+}
+
+.activeCell {
+  background: rgba(168, 85, 247, 0.04);
+  border-left: 1px solid rgba(168, 85, 247, 0.15);
+  border-right: 1px solid rgba(168, 85, 247, 0.15);
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+
+.matrixTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* Circular Operations Hub Section */
+.hubSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: var(--bg-primary);
+}
+
+.hubFlexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.circularVisualContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+}
+
+.centralBeaconNode {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(4, 8, 20, 0.9) 70%);
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: var(--accent-primary);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.centralBeaconAlerting {
+  border-color: var(--accent-highlight);
+  color: var(--accent-highlight);
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.25) 0%, rgba(4, 8, 20, 0.9) 70%);
+  animation: beaconPulse 1s infinite alternate;
+  box-shadow: 0 0 30px rgba(255, 107, 107, 0.4);
+}
+
+.beaconStatusText {
+  font-family: var(--font-primary);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+.outerStepsRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.ringNode {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: rgba(13, 18, 37, 0.9);
+  border: var(--border-glass);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+/* Dynamic positions on 140px radius */
+.ringNode0 {
+  top: 60px;
+  left: 200px;
+  transform: translate(-50%, -50%);
+}
+
+.ringNode1 {
+  top: 200px;
+  left: 340px;
+  transform: translate(-50%, -50%);
+}
+
+.ringNode2 {
+  top: 340px;
+  left: 200px;
+  transform: translate(-50%, -50%);
+}
+
+.ringNode3 {
+  top: 200px;
+  left: 60px;
+  transform: translate(-50%, -50%);
+}
+
+.ringNodeBadge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.ringNodeContent h5 {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.ringNodeActive {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  transform: scale(1.1) translate(-45%, -45%);
+}
+
+/* Adjust transform properly for active node zoom without breaking offset center */
+.ringNode0.ringNodeActive { transform: translate(-50%, -50%) scale(1.12); }
+.ringNode1.ringNodeActive { transform: translate(-50%, -50%) scale(1.12); }
+.ringNode2.ringNodeActive { transform: translate(-50%, -50%) scale(1.12); }
+.ringNode3.ringNodeActive { transform: translate(-50%, -50%) scale(1.12); }
+
+.ringNodeActive .ringNodeBadge {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+.ringNodeDone {
+  border-color: var(--accent-success);
+}
+
+.ringNodeDone .ringNodeBadge {
+  border-color: var(--accent-success);
+  color: var(--accent-success);
+}
+
+.ringSvgConnector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.backgroundRingLine {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+
+.activePulseRingLine {
+  fill: none;
+  stroke: var(--accent-primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 880;
+  stroke-dashoffset: 880;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hubDetailsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 450px;
+}
+
+.hubDetailCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.hubDetailCardActive {
+  background: rgba(168, 85, 247, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateX(6px);
+}
+
+.hubDetailNum {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  background: rgba(168, 85, 247, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+}
+
+.hubDetailCardActive .hubDetailNum {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+.hubDetailTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.hubDetailDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Case study section */
+.caseStudySection {
+  background: rgba(13, 18, 37, 0.2);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.caseCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top right, rgba(255, 107, 107, 0.04), transparent 70%), rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(255, 107, 107, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: 3.5rem;
+}
+
+/* Keyframe loops */
+@keyframes bannerFlash {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+@keyframes beaconPulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.caseTitle {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+
+.caseDesc {
+  margin: 1.5rem auto;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+.caseLink {
+  padding: 0.85rem 2.25rem;
+}
+
+@media (max-width: 1024px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hubFlexContainer {
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  .circularVisualContainer {
+    display: none;
+  }
+  .hubDetailsPanel {
+    max-width: 650px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding: 6rem 0 4rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .desc {
+    font-size: 1rem;
+  }
+  .cockpitCard {
+    padding: 1.75rem;
+  }
+  .caseCard {
+    padding: 2.5rem 1.5rem;
+  }
+  .caseTitle {
+    font-size: 2rem;
+  }
+  .caseDesc {
+    font-size: 0.95rem;
+  }
+  .caseLink {
+    padding: 0.75rem 1.75rem;
+  }
+  .matrixTable {
+    width: 800px;
+    font-size: 0.85rem;
+  }
+  .matrixTable th, .matrixTable td {
+    padding: 1rem 0.5rem;
+  }
+  .tierTitle {
+    font-size: 1rem;
+  }
+  .tierSub {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .triggerBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .desc {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  .cockpitCard {
+    padding: 1.25rem;
+  }
+  .terminal {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+  .caseCard {
+    padding: 2rem 1rem;
+  }
+  .caseTitle {
+    font-size: 1.6rem;
+  }
+  .statusBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+}

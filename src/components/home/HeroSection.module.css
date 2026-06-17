@@ -1,0 +1,402 @@
+/* ─── Hero Section ───────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: 8rem 0 4rem;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Background grid network and glow aesthetics */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.08) 0%, rgba(6, 182, 212, 0.03) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid layout splitting content and custom visualizer */
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* ─── Left content panel ─────────────────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Tagline pill with neon breath animation */
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--border-radius-full);
+  background: rgba(124, 58, 237, 0.07);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  color: #c084fc;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: neonBreath 3s ease-in-out infinite alternate;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.05);
+}
+
+.sparkleIcon {
+  color: var(--accent-secondary);
+  filter: drop-shadow(0 0 4px var(--accent-secondary));
+}
+
+/* Headline typography and text glow styling */
+.headline {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.gText {
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 0 60px rgba(6, 182, 212, 0.25);
+}
+
+/* Subheadline text */
+.subheadline {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0;
+}
+
+/* CTA row */
+.ctas {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ctaBtnAccent {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.25) !important;
+}
+
+.ctaBtnAccent:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.45), 0 5px 15px rgba(124, 58, 237, 0.2) !important;
+}
+
+.ctaBtnSecondary {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.ctaBtnSecondary:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Trust badges row and hover elevations */
+.trustRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--border-radius-full);
+  background: rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.badgeIconBlue { color: #3b82f6; }
+.badgeIconPurple { color: #8b5cf6; }
+.badgeIconCyan { color: #06b6d4; }
+
+/* ─── Right Panel: Interactive Tech Sphere ─────────────────────────────── */
+.visualContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 480px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.glowOverlay {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sphereSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Animations for rotating orbital elements and pulsing core */
+.pulseGlow {
+  transform-origin: center;
+  animation: pulseGlowKey 4s ease-in-out infinite alternate;
+}
+
+.rotateOrbit1 {
+  transform-origin: center;
+  animation: spinClockwise 25s linear infinite;
+}
+
+.rotateOrbit2 {
+  transform-origin: center;
+  animation: spinCounter 35s linear infinite;
+}
+
+.rotateOrbit3 {
+  transform-origin: center;
+  animation: spinClockwise 18s linear infinite;
+}
+
+.coreOrb {
+  transform-origin: center;
+  animation: floatCore 3s ease-in-out infinite alternate;
+}
+
+.networkNodes circle {
+  transform-origin: center;
+  animation: pulseNode 3s ease-in-out infinite alternate;
+}
+
+.nodePoint1 { animation-delay: 0.2s !important; }
+.nodePoint2 { animation-delay: 0.6s !important; }
+.nodePoint3 { animation-delay: 1s !important; }
+.nodePoint4 { animation-delay: 1.4s !important; }
+
+/* HUD panels overlaying the tech sphere */
+.hudPanel, .hudPanelRight {
+  position: absolute;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--border-radius-sm);
+  background: rgba(13, 18, 37, 0.75);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 6px rgba(6, 182, 212, 0.15);
+}
+
+.hudPanel {
+  bottom: 15%;
+  left: 5%;
+  color: #06b6d4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  animation: floatHUDKey 3.5s ease-in-out infinite alternate;
+}
+
+.hudBar {
+  width: 45px;
+  height: 3px;
+  background: #06b6d4;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hudBar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  animation: hudLoad 1.5s ease-in-out infinite alternate;
+}
+
+.hudPanelRight {
+  top: 15%;
+  right: 5%;
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.2);
+  animation: floatHUDKey 4s ease-in-out infinite alternate-reverse;
+}
+
+.hudTextRight {
+  text-shadow: 0 0 5px rgba(167, 139, 250, 0.6);
+}
+
+/* ─── Keyframe Animations ────────────────────────────────────────────────── */
+@keyframes spinClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulseGlowKey {
+  0% { transform: scale(0.95); opacity: 0.6; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes floatCore {
+  0% { transform: scale(0.96) translate(0, 0); }
+  100% { transform: scale(1.04) translate(2px, -2px); }
+}
+
+@keyframes pulseNode {
+  0% { transform: scale(0.85); filter: brightness(0.8) drop-shadow(0 0 2px currentColor); }
+  100% { transform: scale(1.15); filter: brightness(1.2) drop-shadow(0 0 6px currentColor); }
+}
+
+@keyframes floatHUDKey {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes hudLoad {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes neonBreath {
+  0% {
+    background: rgba(124, 58, 237, 0.05);
+    border-color: rgba(124, 58, 237, 0.15);
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.02);
+  }
+  100% {
+    background: rgba(124, 58, 237, 0.12);
+    border-color: rgba(124, 58, 237, 0.35);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
+  }
+}
+
+/* ─── Responsive Adjustments ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .headline { font-size: 3.4rem; }
+  .contentWrapper { gap: 2.5rem; }
+}
+
+@media (max-width: 900px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding-top: 2rem;
+  }
+  .content {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+  .subheadline {
+    max-width: 600px;
+  }
+  .ctas {
+    justify-content: center;
+  }
+  .trustRow {
+    justify-content: center;
+  }
+  .visualContainer {
+    max-width: 400px;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 7rem 0 3rem;
+  }
+  .headline {
+    font-size: 2.4rem;
+  }
+  .subheadline {
+    font-size: 1rem;
+  }
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ctas button, .ctas a {
+    width: 100%;
+  }
+  .visualContainer {
+    max-width: 320px;
+  }
+  .hudPanel {
+    left: 0;
+  }
+  .hudPanelRight {
+    right: 0;
+  }
+}

@@ -1,0 +1,487 @@
+.industrySection {
+  padding-top: 8rem;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Gradients */
+.industrySection::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.industrySection::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroBlock {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 5rem auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 3.75rem;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  line-height: 1.1;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+.desc {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-top: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 1. Success Metrics Bento Grid */
+.metricsSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  background: rgba(13, 18, 37, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.metricCard {
+  background: rgba(13, 18, 37, 0.5);
+  border: var(--border-glass);
+  padding: 2.5rem 2rem;
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.metricCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6, 182, 212, 0.25);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(6, 182, 212, 0.02);
+}
+
+.metricCard:hover::after {
+  opacity: 1;
+}
+
+.metricValue {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #FFFFFF 50%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metricLabel {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+/* 2. Split Screen Challenges Section */
+.challengesSection {
+  padding: 8rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.stickyLeft {
+  position: sticky;
+  top: 7rem;
+}
+
+.subtitle {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.leftDesc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Telemetry Alert box */
+.telemetryBox {
+  background: rgba(255, 107, 107, 0.03);
+  border: 1px solid rgba(255, 107, 107, 0.15);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.telemetryTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-highlight);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.telemetryDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.challengesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.challengeCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.challengeCard:hover {
+  border-color: rgba(255, 107, 107, 0.25);
+  background: rgba(13, 18, 37, 0.6);
+}
+
+.challengeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.challengeTitleBlock {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.challengeTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+/* Expandable Patch Solution block */
+.patchWrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.patchWrapperOpen {
+  max-height: 250px;
+  opacity: 1;
+}
+
+.patchBox {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.patchLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.patchDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* 3. Pipeline Flow Architecture Section */
+.architectureSection {
+  padding: 8rem 0;
+  background: rgba(8, 13, 30, 0.4);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  position: relative;
+  z-index: 1;
+}
+
+.diagramBox {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-xl);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.diagramHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.diagramLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+.diagramLegend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.legendDot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  animation: pulseDot 1.5s infinite alternate;
+}
+
+@keyframes pulseDot {
+  from { opacity: 0.4; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+.flowRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+/* Connector Line Background */
+.flowRow::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+.flowNode {
+  background: rgba(13, 18, 37, 0.8);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  width: 21%;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+  z-index: 5;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.flowNodeActive {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+  background: rgba(13, 18, 37, 0.95);
+  transform: translateY(-4px);
+}
+
+.flowNodeActive .stepNumber {
+  color: var(--accent-secondary) !important;
+}
+
+.stepNumber {
+  font-family: monospace;
+  font-weight: 800;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nodeName {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.nodeDetails {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* 4. Case Study Card Overlay Spot */
+.caseStudyCard {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.06) 0%, transparent 60%), rgba(13, 18, 37, 0.4);
+  padding: 4rem 3rem;
+  border-radius: var(--border-radius-xl);
+  text-align: center;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: relative;
+  box-shadow: var(--shadow-xl);
+}
+
+.caseStudyCard::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 1024px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .stickyLeft {
+    position: static;
+  }
+  .flowRow {
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2rem;
+  }
+  .flowRow::before {
+    top: 5%;
+    bottom: 5%;
+    left: 28px;
+    width: 2px;
+    height: 90%;
+  }
+  .flowNode {
+    width: 100%;
+    max-width: 500px;
+  }
+  .flowNodeActive {
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.75rem;
+  }
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .diagramBox {
+    padding: 1.5rem;
+  }
+  .caseStudyCard {
+    padding: 2.5rem 1.5rem;
+  }
+}

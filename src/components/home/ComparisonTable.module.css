@@ -1,0 +1,500 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   ComparisonTable.module.css — Scroll-Driven Skill Arsenal Section
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Outer section — tall scroll runway (desktop) ──────────────────────── */
+.section {
+  position: relative;
+  height: calc(100vh + 1320px); /* 100vh + 6 rows × 220px */
+  /* Mobile overrides this to height: auto */
+}
+
+/* ─── Sticky wrapper — stays in viewport while user scrolls ─────────────── */
+.stickyWrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Layout grid: [rail] [table] */
+.inner {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+  width: 100%;
+  height: 90vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   PROGRESS RAIL
+   ══════════════════════════════════════════════════════════════════════════ */
+.progressRail {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.railTrack {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.railFill {
+  width: 100%;
+  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+  border-radius: 2px;
+  transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Individual dot + label on the rail */
+.railDotWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateY(-50%);
+  cursor: default;
+}
+
+.railDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  margin-left: calc(50% - 5px);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.railLabel {
+  font-size: 0.68rem;
+  font-family: var(--font-secondary);
+  color: rgba(255, 255, 255, 0.20);
+  white-space: nowrap;
+  position: absolute;
+  left: calc(50% + 14px);
+  transition: color 0.35s ease;
+  pointer-events: none;
+}
+
+.railDotActive .railDot {
+  background: var(--accent-primary);
+  border-color: rgba(124, 58, 237, 0.6);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.55), 0 0 20px rgba(124, 58, 237, 0.25);
+}
+
+.railDotActive .railLabel {
+  color: rgba(167, 139, 250, 0.75);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   TABLE AREA — right side
+   ══════════════════════════════════════════════════════════════════════════ */
+.tableArea {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Section Header ── */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.eyebrow {
+  font-family: var(--font-secondary);
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-family: var(--font-secondary);
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 620px;
+}
+
+.scrollHint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.scrollHintIcon {
+  width: 16px;
+  height: 26px;
+  border: 2px solid rgba(124, 58, 237, 0.35);
+  border-radius: 99px;
+  position: relative;
+}
+
+.scrollHintIcon::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 6px;
+  background: var(--accent-primary);
+  border-radius: 99px;
+  animation: scrollBob 1.4s ease-in-out infinite;
+}
+
+@keyframes scrollBob {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  60%       { transform: translateX(-50%) translateY(6px); opacity: 0.3; }
+}
+
+.scrollHint span {
+  font-family: var(--font-secondary);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(124, 58, 237, 0.5);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ── Glass Table Frame ── */
+.tableFrame {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-glass);
+  box-shadow: var(--shadow-premium);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark mode table */
+.darkTheme .tableFrame,
+:global(.darkTheme) .tableFrame {
+  background: rgba(15, 18, 30, 0.82) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* ── Table Header row ── */
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  background: rgba(17, 24, 39, 0.04);
+  border-bottom: var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.darkTheme .tableHeader,
+:global(.darkTheme) .tableHeader {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.headerCell {
+  padding: 0.875rem 1.25rem;
+  font-family: var(--font-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.expertHeader {
+  color: rgba(124, 58, 237, 0.85);
+  background: rgba(124, 58, 237, 0.04);
+}
+
+.starIcon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+/* Purple highlight overlay on Expert column */
+.expertColHighlight {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.06) 0%,
+    rgba(99, 102, 241, 0.04) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Table Body ── */
+.tableBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Individual data row ── */
+.tableRow {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  border-bottom: var(--border-light);
+  position: relative;
+  transition: background 0.3s ease;
+  min-height: 56px;
+  align-items: center;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.rowActive {
+  background: rgba(124, 58, 237, 0.03);
+  box-shadow: inset 3px 0 0 var(--accent-primary);
+}
+
+/* ── Cell base ── */
+.cell {
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Feature name cell */
+.featureCell {
+  gap: 0.625rem;
+}
+
+.featureIcon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.featureName {
+  font-family: var(--font-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Standard cell value */
+.cellValue {
+  font-family: var(--font-secondary);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Expert cell — purple gradient text + subtle bg */
+.expertCell {
+  background: rgba(124, 58, 237, 0.04);
+  position: relative;
+}
+
+.expertValue {
+  font-family: var(--font-primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.expertCellGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.06) 0%,
+    rgba(6, 182, 212, 0.04) 100%
+  );
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MOBILE SECTION — visible only on ≤768px
+   ══════════════════════════════════════════════════════════════════════════ */
+.mobileSection {
+  display: none;
+  padding: 5rem 0;
+}
+
+.mobileSectionHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mobileCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileCard {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+:global(.darkTheme) .mobileCard {
+  background: rgba(15, 18, 30, 0.82) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.mobileCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.25rem;
+  background: rgba(17, 24, 39, 0.04);
+  border-bottom: var(--border-light);
+}
+
+.mobileCardIcon {
+  color: var(--accent-primary);
+  opacity: 0.85;
+}
+
+.mobileCardFeature {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mobileCardBody {
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileCardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.05);
+}
+
+.mobileCardRow:last-child {
+  border-bottom: none;
+}
+
+.mobileExpert {
+  background: rgba(124, 58, 237, 0.04);
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  margin: 0 -0.5rem;
+}
+
+.mobileLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mobileValue {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mobileExpert .mobileValue {
+  background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Responsive breakpoints ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Hide sticky desktop experience */
+  .section {
+    height: auto !important;
+  }
+  .stickyWrapper {
+    display: none !important;
+  }
+  /* Show mobile cards */
+  .mobileSection {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Hide mobile section on desktop */
+  .mobileSection {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .title { font-size: 2.2rem; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 40px 1fr;
+    gap: 1.5rem;
+  }
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1.4fr 0.9fr 0.9fr 1.2fr;
+  }
+  .cell { padding: 0.75rem 0.875rem; }
+  .headerCell { padding: 0.75rem 0.875rem; }
+}

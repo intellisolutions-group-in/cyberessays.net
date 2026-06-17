@@ -1,0 +1,186 @@
+.section {
+  background: var(--bg-secondary);
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 2.75rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 4rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timelineBar {
+  position: absolute;
+  top: 24px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: rgba(17, 24, 39, 0.08);
+  z-index: 1;
+}
+
+.timelineBarFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--accent-primary);
+  transition: width 0.4s ease;
+}
+
+.stepNode {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nodeCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.stepNode:hover .nodeCircle, .activeNode .nodeCircle {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.15);
+  transform: scale(1.08);
+}
+
+.activeNode .nodeCircle {
+  background: var(--accent-primary);
+  color: #FFFFFF !important;
+}
+
+.nodeLabel {
+  margin-top: 0.75rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.activeNode .nodeLabel {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.detailsBlock {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  background: var(--bg-card);
+  padding: 3rem;
+  border-radius: var(--border-radius-xl);
+  border: var(--border-light);
+  box-shadow: var(--shadow-lg);
+  min-height: 380px;
+}
+
+.detailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detailsTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.detailsTitle {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.85rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.detailsDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.visualPane {
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: var(--border-light);
+  aspect-ratio: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.deliverableRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-wrap: wrap;
+    gap: 1.5rem 1rem;
+    justify-content: center;
+  }
+  .timelineBar {
+    display: none;
+  }
+  .detailsBlock {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+}

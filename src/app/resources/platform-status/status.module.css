@@ -1,0 +1,378 @@
+.statusPage {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: transparent;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* 1. Global Status Banner */
+.globalBanner {
+  background: rgba(16, 185, 129, 0.04);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.05);
+}
+
+.bannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pulseBeacon {
+  width: 24px;
+  height: 24px;
+  background: var(--accent-success);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.pulseBeacon::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent-success);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulseRadar 2s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pulseRadar {
+  0% { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.bannerTitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.bannerDesc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.uptimePercent {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--accent-success);
+}
+
+/* 2. Component Status Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compName {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.compStatus {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-success);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* 30-day timeline graph */
+.timeline {
+  display: flex;
+  gap: 3px;
+  width: 100%;
+}
+
+.block {
+  flex: 1;
+  height: 28px;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.block:hover {
+  transform: scaleY(1.2) scaleX(1.1);
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.blockGreen {
+  background: #10B981;
+}
+
+.blockYellow {
+  background: #FBBF24;
+}
+
+/* Block Tooltip Overlay */
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #0d1225;
+  border: var(--border-light);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.725rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 20;
+}
+
+.block:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.timelineFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* 3. Live Telemetry Console (Split Grid) */
+.telemetryGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.panel {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panelTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Real-Time Logs Terminal Console */
+.terminal {
+  background: #040814;
+  border: var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  height: 250px;
+  overflow-y: auto;
+  color: #a78bfa;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.logLine {
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.logTime {
+  color: var(--text-secondary);
+  margin-right: 0.5rem;
+}
+
+.logCheck {
+  color: var(--accent-success);
+}
+
+.logInfo {
+  color: #38bdf8;
+}
+
+.logWarn {
+  color: #fbbf24;
+}
+
+/* 4. Incident History Accordion */
+.incidentsBlock {
+  background: rgba(13, 18, 37, 0.2);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+}
+
+.incidentsTitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.incidentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion {
+  border: var(--border-light);
+  border-radius: var(--border-radius-sm);
+  background: rgba(13, 18, 37, 0.4);
+  overflow: hidden;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.accordionHeader:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.accordionTitleBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.accordionTitle {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.accordionState {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.accordionContent {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(4, 8, 20, 0.3);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .telemetryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .globalBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .title {
+    font-size: 2.25rem;
+  }
+  .incidentsBlock {
+    padding: 1.5rem;
+  }
+}

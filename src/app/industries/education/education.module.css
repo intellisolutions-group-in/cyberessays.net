@@ -1,0 +1,603 @@
+.eduPage {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Collaborative Whiteboard Container */
+.canvasCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mock Interactive Drawing Board Area */
+.boardArea {
+  height: 350px;
+  background: #040814;
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.boardGridBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Animated Cursor Element */
+.cursor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cursorLabel {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+.cursorLabelCyan {
+  background: var(--accent-secondary);
+  color: #040814;
+}
+
+.cursorLabelCoral {
+  background: var(--accent-highlight);
+}
+
+/* Side Sync Panel */
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sideCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.statsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.statItem {
+  background: rgba(4, 8, 20, 0.4);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.statVal {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #FFFFFF 50%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statLabel {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* Case study section */
+.caseStudySection {
+  background: rgba(13, 18, 37, 0.2);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.caseCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.04), transparent 70%), rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: 3.5rem;
+}
+
+/* Main top split grid: whiteboard + sidebar */
+.mainSplitGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Palette section split: text left, tools right */
+.paletteSplitGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Tool palette 2-col grid */
+.toolPaletteGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Testimonials 2-col grid */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .mainSplitGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .paletteSplitGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .methodTimeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .eduPage {
+    padding: 6rem 0 4rem;
+  }
+
+  .titleBlock {
+    margin-bottom: 2.5rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .desc {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .mainSplitGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .paletteSplitGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .toolPaletteGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .canvasCard {
+    padding: 1.5rem;
+  }
+
+  .boardArea {
+    height: 220px;
+  }
+
+  .caseCard {
+    padding: 2rem 1.25rem;
+  }
+
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .methodTimeline {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eduPage {
+    padding: 5rem 0 3rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+
+  .canvasCard {
+    padding: 1.25rem;
+  }
+
+  .boardArea {
+    height: 180px;
+  }
+
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .caseCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .sideCard {
+    padding: 1.25rem;
+  }
+
+  .featureCard {
+    padding: 1.25rem;
+  }
+
+  .featureTitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Technical Specs Section */
+.specsSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: rgba(4, 8, 20, 0.2);
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.sectionTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.sectionDesc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.75rem auto 0;
+  line-height: 1.5;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.specCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.specCard:hover {
+  border-color: rgba(168, 85, 247, 0.25);
+  transform: translateY(-2px);
+  background: rgba(13, 18, 37, 0.5);
+}
+
+.specTitle {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.specValue {
+  font-family: var(--font-primary);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.specDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.methodologySection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: var(--bg-primary);
+}
+
+.methodTimeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.methodStep {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.stepNum {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .methodTimeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+  .methodTimeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Architectural Features Section */
+.featuresSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+  background: rgba(4, 8, 20, 0.15);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.featureCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featureCard:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  transform: translateY(-4px);
+  background: rgba(13, 18, 37, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.featureIcon {
+  color: var(--accent-primary);
+  display: inline-flex;
+}
+
+.featureTitle {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.featureDesc {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.featureSpecs {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.featureSpecItem {
+  font-family: monospace;
+  font-size: 0.725rem;
+  color: var(--accent-primary);
+  background: rgba(124, 58, 237, 0.03);
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .featureCard {
+    padding: 1.75rem;
+  }
+}
+
+

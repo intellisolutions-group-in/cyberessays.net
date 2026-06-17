@@ -1,0 +1,492 @@
+.pageWrapper {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent-success);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Left: Playwright Test Console */
+.testCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Testing Grid Rows */
+.testGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.testItem {
+  background: rgba(4, 8, 20, 0.4);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.25s ease;
+  opacity: 0.5;
+}
+
+.testItemActive {
+  opacity: 1;
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.02);
+}
+
+.testItemSuccess {
+  opacity: 1;
+}
+
+.rowHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+
+.testStatus {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.statusActive {
+  color: var(--accent-secondary);
+}
+
+.statusPassed {
+  color: var(--accent-success);
+}
+
+/* Progress bar inside row */
+.progressBar {
+  height: 4px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent-secondary);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.progressFillSuccess {
+  background: var(--accent-success);
+}
+
+.runBtn {
+  background: #FFFFFF;
+  color: #040814;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.runBtn:hover:not(:disabled) {
+  background: var(--accent-success);
+  color: #040814;
+  transform: translateY(-1px);
+}
+
+.runBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Right: Benefits */
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.benefitsCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.benefitItem {
+  background: rgba(4, 8, 20, 0.4);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+}
+
+.benefitTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.benefitDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Case study section */
+.caseStudySection {
+  background: rgba(13, 18, 37, 0.2);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.caseCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.04), transparent 70%), rgba(13, 18, 37, 0.4);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: 3.5rem;
+}
+
+@media (max-width: 1024px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.5rem; }
+  .testCard { padding: 1.5rem; }
+  .benefitsCard { padding: 1.5rem; }
+  .caseCard { padding: 2rem 1.25rem; }
+}
+
+/* Additional Specs & Methodology sections */
+.specsSection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.sectionTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--accent-success);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Circular Gauges Grid */
+.gaugesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gaugeCard {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.gaugeCard:hover {
+  border-color: rgba(16, 185, 129, 0.25);
+  transform: translateY(-2px);
+}
+
+.gaugeSvgContainer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.gaugeSvg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.gaugeBgCircle {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 8;
+}
+
+.gaugeValCircle {
+  fill: none;
+  stroke: var(--accent-success);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.gaugeTextVal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.gaugeLabel {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.gaugeDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.methodologySection {
+  padding: 6rem 0;
+  border-top: var(--border-light);
+}
+
+/* Interactive Horizontal Accordion Timeline */
+.accordionLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.accordionTabsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordionTab {
+  background: rgba(13, 18, 37, 0.3);
+  border: var(--border-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.25s ease;
+  text-align: left;
+  border: var(--border-light);
+  width: 100%;
+}
+
+.accordionTabActive {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: var(--accent-success);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.08);
+}
+
+.tabNum {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.accordionTabActive .tabNum {
+  color: var(--accent-success);
+}
+
+.tabLabel {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.accordionTabActive .tabLabel {
+  color: #FFFFFF;
+}
+
+.accordionDetailsCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  min-height: 300px;
+}
+
+.detailsHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailsNum {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-success);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.detailsTitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 0.25rem;
+}
+
+.checklistGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.checklistItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.checkIcon {
+  color: var(--accent-success);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 1024px) {
+  .gaugesGrid {
+    grid-template-columns: 1fr;
+  }
+  .accordionLayout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+

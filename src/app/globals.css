@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Digital Abyss Dark Palette ───────────────────────────────────────── */
+  --bg-primary:    #040814;
+  --bg-secondary:  #080d1e;
+  --bg-card:       #0d1225;
+
+  --text-primary:   #F0F4FF;
+  --text-secondary: #7B8BAE;
+
+  --accent-primary:   #7C3AED;   /* Aurora Purple */
+  --accent-secondary: #06B6D4;   /* Electric Cyan  */
+  --accent-highlight: #FF6B6B;   /* Sunset Coral   */
+  --accent-success:   #10B981;   /* Emerald        */
+
+  /* Font Families */
+  --font-primary:  'Plus Jakarta Sans', sans-serif;
+  --font-secondary:'Inter', sans-serif;
+  --font-display:  'Plus Jakarta Sans', sans-serif;
+
+  /* Borders & Shadows */
+  --border-radius-sm:   8px;
+  --border-radius-md:   16px;
+  --border-radius-lg:   24px;
+  --border-radius-xl:   32px;
+  --border-radius-full: 9999px;
+
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:      0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg:      0 10px 30px rgba(0,0,0,0.45);
+  --shadow-xl:      0 20px 50px rgba(0,0,0,0.5);
+  --shadow-premium: 0 30px 80px -10px rgba(0,0,0,0.6);
+  --shadow-glass:   0 8px 32px rgba(124,58,237,0.08);
+
+  --border-light: 1px solid rgba(255,255,255,0.07);
+  --border-glass: 1px solid rgba(255,255,255,0.05);
+  --border-accent: 1px solid rgba(124,58,237,0.18);
+}
+
+/* Base Resets */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: clip;
+  /* ── Digital Abyss: deep fixed multi-layer gradient ─────────────────── */
+  background-color: #040814;
+  background-image:
+    linear-gradient(
+      to bottom,
+      #040814 0%,
+      #07091a 18%,
+      #0b031a 45%,
+      #080f1e 72%,
+      #0a0f12 100%
+    );
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text-primary);
+  font-family: var(--font-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(124, 58, 237, 0.15);
+  color: var(--accent-primary);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track  { background: #040814; }
+::-webkit-scrollbar-thumb  { background: rgba(124,58,237,0.25); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124,58,237,0.45); }
+
+/* ── Glass panel (dark) ─────────────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(13, 18, 37, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--border-glass);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Grid & Layout Helpers */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+.section-padding {
+  padding: 7.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4.5rem 0;
+  }
+}
+
+/* Typography styles */
+.gradient-text-purple-cyan {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-coral-purple {
+  background: linear-gradient(135deg, var(--accent-highlight) 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom interactive animation effects */
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: none;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.btn-primary {
+  background: rgba(255,255,255,0.95);
+  color: #0b031a;
+  box-shadow: 0 4px 14px rgba(255,255,255,0.08);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgba(255,255,255,0.14);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-primary);
+  border: var(--border-light);
+  box-shadow: none;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.14);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #6366F1 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px 0 rgba(124, 58, 237, 0.2);
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(124, 58, 237, 0.35);
+  opacity: 0.95;
+}
+
+/* Infinitely running logo marquee keyframe */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100%;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* ── Scroll Theme Transition (dark→dark, no flip needed) ─────────────────── */
+.theme-transition-wrapper {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.darkTheme {
+  /* site is already dark — no override needed */
+}
+

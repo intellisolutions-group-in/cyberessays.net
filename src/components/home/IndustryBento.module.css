@@ -1,0 +1,194 @@
+.section {
+  background: var(--bg-secondary);
+}
+
+.titleBlock {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 2.75rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  max-width: 500px;
+}
+
+.desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* Bento card sizing classes */
+.colSpan2 {
+  grid-column: span 2;
+}
+
+.colSpan1 {
+  grid-column: span 1;
+}
+
+.card {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--border-radius-xl);
+  border: var(--border-light);
+  padding: 2.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: var(--shadow-lg), 0 10px 30px rgba(124, 58, 237, 0.03);
+}
+
+/* Background visual positioning */
+.bgVisual {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 200px;
+  height: 200px;
+  opacity: 0.05;
+  color: var(--accent-primary);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover .bgVisual {
+  opacity: 0.12;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.industryTag {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.825rem;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+.successInfo {
+  max-width: 60%;
+}
+
+.successHeadline {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.successDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.metricsBlock {
+  text-align: right;
+}
+
+.metricValue {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 2.25rem;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.metricLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .colSpan2 {
+    grid-column: span 2;
+  }
+  .colSpan1 {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .title {
+    font-size: 2.15rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .colSpan2, .colSpan1 {
+    grid-column: span 1;
+  }
+  .card {
+    min-height: auto;
+    padding: 2rem;
+  }
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .successInfo {
+    max-width: 100%;
+  }
+  .metricsBlock {
+    text-align: left;
+  }
+}

@@ -1,0 +1,524 @@
+.contactPage {
+  padding: 8rem 0 6rem;
+  background: transparent;
+  min-height: 100vh;
+}
+
+.headerBlock {
+  max-width: 780px;
+  margin-bottom: 4rem;
+}
+
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--border-radius-full);
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  color: #a5f3fc;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.sparkleIcon {
+  color: var(--accent-secondary);
+  filter: drop-shadow(0 0 3px var(--accent-secondary));
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.desc {
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-top: 1.5rem;
+}
+
+/* Split Column layouts */
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.glassPanel {
+  background: rgba(13, 18, 37, 0.45);
+  border: var(--border-light);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-xl);
+}
+
+.configPanel {
+  box-shadow: var(--shadow-md);
+}
+
+.panelTitle {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  border-bottom: var(--border-light);
+  padding-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+/* Industry Button selectors */
+.radioGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.radioBtn {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-light);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radioBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.activeRadioBtn {
+  background: rgba(6, 182, 212, 0.12) !important;
+  border-color: rgba(6, 182, 212, 0.35) !important;
+  color: var(--accent-secondary) !important;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
+}
+
+/* Module Selection Cards */
+.checkGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-light);
+  padding: 1.25rem;
+  border-radius: var(--border-radius-md);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.checkCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.activeCheckCard {
+  border-color: rgba(124, 58, 237, 0.25) !important;
+  background: rgba(124, 58, 237, 0.05) !important;
+}
+
+.checkCircle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.activeCheckCard .checkCircle {
+  border-color: var(--accent-primary) !important;
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.checkTitle {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.checkDesc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 0.25rem;
+}
+
+/* Scaling slider control */
+.sliderVal {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--accent-secondary);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-secondary);
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+/* Inputs form fields */
+.textInput {
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-secondary);
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.textInput:focus {
+  border-color: rgba(124, 58, 237, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.08);
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem !important;
+}
+
+/* ─── Real-Time Diagnostics Panel ────────────────────────────────────────── */
+.diagnosticsPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.telemetryBoard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Mini metrics cards */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.metricCard {
+  background: rgba(13, 18, 37, 0.4);
+  border: var(--border-light);
+  padding: 1.25rem 1rem;
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metricLabel {
+  font-family: var(--font-secondary);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.metricVal {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-secondary);
+}
+
+/* Console Simulation */
+.consoleFrame {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg), inset 0 0 10px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.consoleHeader {
+  background: rgba(15, 23, 42, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.consoleLights {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.consoleLights span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.lightRed { background: #ef4444; }
+.lightYellow { background: #eab308; }
+.lightGreen { background: #22c55e; }
+
+.consoleTitle {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+.consoleLines {
+  padding: 1.5rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 180px;
+}
+
+/* Submission Banner popup */
+.statusBanner {
+  background: rgba(16, 185, 129, 0.07);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.05);
+}
+
+.successIcon {
+  color: var(--accent-success);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Input row for name + email */
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .splitGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contactPage {
+    padding: 6rem 0 4rem;
+  }
+
+  .headerBlock {
+    margin-bottom: 2.5rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .desc {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .glassPanel {
+    padding: 1.75rem;
+  }
+
+  .splitGrid {
+    gap: 2rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+
+  .metricCard {
+    padding: 1rem 0.6rem;
+  }
+
+  .metricVal {
+    font-size: 1.1rem;
+  }
+
+  .metricLabel {
+    font-size: 0.65rem;
+  }
+
+  .inputRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 1rem;
+  }
+
+  .panelTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .consoleLines {
+    min-height: 140px;
+    font-size: 0.7rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactPage {
+    padding: 5rem 0 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .glassPanel {
+    padding: 1.25rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .metricCard {
+    padding: 0.75rem 0.4rem;
+  }
+
+  .metricVal {
+    font-size: 0.95rem;
+  }
+
+  .metricLabel {
+    font-size: 0.58rem;
+    letter-spacing: 0;
+  }
+
+  .radioGrid {
+    gap: 0.4rem;
+  }
+
+  .radioBtn {
+    font-size: 0.68rem;
+    padding: 0.4rem 0.65rem;
+  }
+
+  .checkCard {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .checkTitle {
+    font-size: 0.82rem;
+  }
+
+  .submitBtn {
+    padding: 0.85rem !important;
+    font-size: 0.85rem;
+  }
+
+  .consoleLines {
+    min-height: 120px;
+    font-size: 0.65rem;
+  }
+}
