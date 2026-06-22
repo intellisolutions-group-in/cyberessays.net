@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./InsightsGrid.module.css";
 import { ArrowRight, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 interface Article {
   id: string;
@@ -48,10 +49,10 @@ export default function InsightsGrid() {
         
         <div className={styles.titleBlock}>
           <h2 className={styles.title}>Insights & Innovation</h2>
-          <div className={styles.viewAll}>
+          <Link href="/contact" className={styles.viewAll}>
             <span>Browse Library</span>
             <ArrowRight size={16} />
-          </div>
+          </Link>
         </div>
 
         <div className={styles.grid}>

@@ -23,8 +23,8 @@ export default function IndustryBento() {
       tag: "SaaS & Platform",
       title: "Accelerating Next-Gen SaaS Growth",
       successHeadline: "Linear Scale Engine",
-      successDesc: "Optimized serverless routing to handle over 10k simultaneous websocket loops.",
-      metricVal: "+32%",
+      successDesc: "Optimized serverless routing to handle high-volume simultaneous websocket loops.",
+      metricVal: "High",
       metricLabel: "Throughput capacity",
       spanClass: styles.colSpan2,
       svgIcon: (
@@ -43,8 +43,8 @@ export default function IndustryBento() {
       title: "Secure Encrypted Clinical Architecture",
       successHeadline: "Vitals Ledger Platform",
       successDesc: "Encrypted patient data sharing system across 12 major regional clinics.",
-      metricVal: "Compliant",
-      metricLabel: "Security & Privacy Audits",
+      metricVal: "Secure",
+      metricLabel: "Security & Privacy Focus",
       spanClass: styles.colSpan1,
       svgIcon: (
         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
@@ -58,8 +58,8 @@ export default function IndustryBento() {
       tag: "FinTech",
       title: "Zero-Latency Financial Pipelines",
       successHeadline: "Automated Fraud Shield",
-      successDesc: "Real-time anomaly identification scanning 4,000+ checks/second under 4ms.",
-      metricVal: "48k",
+      successDesc: "Real-time anomaly identification with low-latency security checks.",
+      metricVal: "High Volume",
       metricLabel: "Transactions processed",
       spanClass: styles.colSpan1,
       svgIcon: (
@@ -76,7 +76,7 @@ export default function IndustryBento() {
       title: "Collaborative EdTech Workspaces",
       successHeadline: "University Class Hub",
       successDesc: "Interactive cloud portals providing sub-second document sync for synchronous lessons.",
-      metricVal: "15k+",
+      metricVal: "Scalable",
       metricLabel: "Monthly active learners",
       spanClass: styles.colSpan2,
       svgIcon: (
@@ -93,7 +93,7 @@ export default function IndustryBento() {
       title: "Omnichannel Checkout Systems",
       successHeadline: "Unified Commerce Engine",
       successDesc: "Decreased user checkout drop-offs via custom headless API connections.",
-      metricVal: "+38%",
+      metricVal: "Improved",
       metricLabel: "Checkout conversion",
       spanClass: styles.colSpan2,
       svgIcon: (

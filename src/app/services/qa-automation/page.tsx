@@ -388,7 +388,7 @@ export default function QaAutomationPage() {
           <div className={styles.caseCard}>
             <span className={styles.tagline} style={{ color: "var(--accent-success)" }}>Success Spotlight</span>
             <h2 style={{ fontFamily: "var(--font-primary)", fontSize: "2.5rem", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em", marginTop: "1rem" }}>
-              Nexus Performance Optimization
+              Performance Optimization
             </h2>
             <p style={{ margin: "1.5rem auto", fontSize: "1.05rem", color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: "650px" }}>
               Refactored system query patterns and integrated Playwright testing layers, optimizing platform load indexes and maintaining optimal routing success rates.

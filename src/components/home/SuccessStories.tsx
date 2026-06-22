@@ -19,13 +19,13 @@ export default function SuccessStories() {
   const stories: Story[] = [
     {
       id: "apex-health",
-      client: "Apex Health Ledger",
+      client: "Healthcare Sector",
       title: "Unified Clinical Data Platform",
-      description: "We consolidated fragmented electronic health records across 12 distinct regional hospitals into a secure zero-trust cloud data pipeline, optimizing query speeds and ensuring patient data safety.",
+      description: "We consolidated fragmented electronic health records across regional hospitals into a secure zero-trust cloud data pipeline, optimizing query speeds and ensuring patient data safety.",
       metrics: [
         { val: "Enterprise", label: "System Uptime SLA" },
-        { val: "110ms", label: "Query Latency" },
-        { val: "21k", label: "Patient Records Secured" }
+        { val: "Low", label: "Query Latency" },
+        { val: "Secure", label: "Patient Records Protected" }
       ],
       isAlt: false,
       link: "/services/ai-solutions",
@@ -61,13 +61,13 @@ export default function SuccessStories() {
     },
     {
       id: "nexus-fintech",
-      client: "Nexus SaaS Engine",
+      client: "FinTech Sector",
       title: "Sub-Second Global Payment Routing Engine",
       description: "We engineered a low-latency transactions routing engine leveraging multi-region edge nodes, automating localized tax rules calculations and minimizing cart checkouts drop-off rates.",
       metrics: [
-        { val: "+38%", label: "Conversion Rate" },
-        { val: "18ms", label: "Transaction Speed" },
-        { val: "42k", label: "Annual Volume Routing" }
+        { val: "Improved", label: "Conversion Rate" },
+        { val: "Low", label: "Transaction Speed" },
+        { val: "High Volume", label: "Annual Volume Routing" }
       ],
       isAlt: true,
       link: "/services/saas-development",

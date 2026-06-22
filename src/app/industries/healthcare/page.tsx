@@ -27,7 +27,7 @@ export default function HealthcarePage() {
     crypt: { id: "crypt", name: "Postgres Shard Crypt", cipher: "AES-256-GCM Row Encryption", status: "Data Insulated" }
   };
 
-  const startComplianceScan = () => {
+  const startSecurityScan = () => {
     if (isScanning) return;
     setIsScanning(true);
     setScanProgress(0);
@@ -94,7 +94,7 @@ export default function HealthcarePage() {
             {isScanning && <div className={styles.laserLine}></div>}
             
             <h2 className={styles.scannerTitle} style={{ fontSize: "1.1rem", fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
-              <Shield size={20} color="var(--accent-success)" /> Compliance Audit & Security Verification
+              <Shield size={20} color="var(--accent-success)" /> Security Verification
             </h2>
 
             <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", lineHeight: 1.5, marginBottom: "1.5rem" }}>
@@ -136,7 +136,7 @@ export default function HealthcarePage() {
               </div>
               <button
                 className={styles.scanBtn}
-                onClick={startComplianceScan}
+                onClick={startSecurityScan}
                 disabled={isScanning}
                 style={{
                   width: "100%",
@@ -181,7 +181,7 @@ export default function HealthcarePage() {
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <span style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>Protected Ledgers</span>
-                  <span style={{ fontSize: "1.1rem", color: "var(--accent-success)", fontWeight: 800 }}>21k Records</span>
+                  <span style={{ fontSize: "1.1rem", color: "var(--accent-success)", fontWeight: 800 }}>Secure Records</span>
                 </div>
               </div>
             </div>

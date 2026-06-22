@@ -171,8 +171,8 @@ export default function ManagedSupportPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.sectionTag}>Technical Specs</span>
-            <h2 className={styles.sectionTitle}>Support Service Level Matrix</h2>
-            <p className={styles.sectionDesc}>Compare our multi-channel SRE coverage options and guaranteed mitigation windows.</p>
+            <h2 className={styles.sectionTitle}>Support Coverage Options</h2>
+            <p className={styles.sectionDesc}>Choose the support level that fits your operational needs.</p>
           </div>
 
           <div className={styles.matrixContainer}>
@@ -181,58 +181,51 @@ export default function ManagedSupportPage() {
                 <tr>
                   <th className={styles.metricColumn}>Service Metric</th>
                   <th className={styles.tierHeader}>
-                    <div className={styles.tierTitle}>Starter</div>
-                    <div className={styles.tierSub}>Standard Support</div>
+                    <div className={styles.tierTitle}>Free Plan</div>
+                    <div className={styles.tierSub}>Community Support</div>
                   </th>
                   <th className={`${styles.tierHeader} ${styles.tierHeaderActive}`}>
-                    <div className={styles.tierTitle}>Professional SRE</div>
-                    <div className={styles.tierSub}>Advanced Support</div>
-                  </th>
-                  <th className={styles.tierHeader}>
-                    <div className={styles.tierTitle}>Mission Critical</div>
-                    <div className={styles.tierSub}>Custom Agreement</div>
+                    <div className={styles.tierTitle}>Enterprise</div>
+                    <div className={styles.tierSub}>Custom Pricing</div>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className={styles.metricName}>Critical Incident SLA</td>
-                  <td>Standard Response</td>
-                  <td className={styles.activeCell}>Priority Support</td>
-                  <td>Enterprise Escalation</td>
+                  <td className={styles.metricName}>Critical Incident Response</td>
+                  <td>Community Forum</td>
+                  <td className={styles.activeCell}>Dedicated Support</td>
                 </tr>
                 <tr>
                   <td className={styles.metricName}>Coverage Window</td>
-                  <td>9x5 Support Desk</td>
-                  <td className={styles.activeCell}>24/7/365 Rotations</td>
-                  <td>24/7 Follow-the-Sun</td>
+                  <td>Business Hours</td>
+                  <td className={styles.activeCell}>Extended Coverage</td>
                 </tr>
                 <tr>
                   <td className={styles.metricName}>Communication Mode</td>
                   <td>Email & Tickets</td>
-                  <td className={styles.activeCell}>Slack Connect Channel</td>
-                  <td>Direct Dedicated Video Bridge</td>
+                  <td className={styles.activeCell}>Direct Channel Access</td>
                 </tr>
                 <tr>
-                  <td className={styles.metricName}>Uptime SLA</td>
-                  <td>Standard SLA</td>
-                  <td className={styles.activeCell}>Advanced SLA</td>
-                  <td>Mission Critical SLA</td>
+                  <td className={styles.metricName}>Uptime Support</td>
+                  <td>Standard</td>
+                  <td className={styles.activeCell}>Enterprise SLA</td>
                 </tr>
                 <tr>
                   <td className={styles.metricName}>Telemetry Linkage</td>
                   <td>Status Page Integration</td>
-                  <td className={styles.activeCell}>Prometheus/Grafana Read</td>
-                  <td>Active Datadog Agent Write</td>
+                  <td className={styles.activeCell}>Full Observability Access</td>
                 </tr>
                 <tr>
                   <td className={styles.metricName}>Mitigation Strategy</td>
-                  <td>Manual Redeployment</td>
-                  <td className={styles.activeCell}>Semi-Automated Shunts</td>
-                  <td>Automated Multi-Zone Failovers</td>
+                  <td>Self-Service Guides</td>
+                  <td className={styles.activeCell}>Managed Failover Support</td>
                 </tr>
               </tbody>
             </table>
+            <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
+              <Link href="/contact" className="magnetic-btn btn-primary">Contact for Enterprise Pricing</Link>
+            </div>
           </div>
         </div>
       </section>
@@ -318,7 +311,7 @@ export default function ManagedSupportPage() {
           <div className={styles.caseCard}>
             <span className={styles.tagline}>Success Spotlight</span>
             <h2 className={styles.caseTitle}>
-              Nexus Infrastructure Maintenance
+              Infrastructure Maintenance
             </h2>
             <p className={styles.caseDesc}>
               Established multi-region disaster recovery failovers, securing stable operations and restoring normal server SLAs under request traffic floods.

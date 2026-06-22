@@ -30,7 +30,7 @@ export default function DevFramework() {
               <ChevronRight size={12} color="var(--accent-primary)" /> Identify system bottlenecks
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--text-primary)" }}>
-              <ChevronRight size={12} color="var(--accent-primary)" /> Target concurrent requests: 50k/sec
+              <ChevronRight size={12} color="var(--accent-primary)" /> Target concurrent requests: high-volume scale
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--text-primary)" }}>
               <ChevronRight size={12} color="var(--accent-primary)" /> Define system boundary constraints

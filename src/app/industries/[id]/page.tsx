@@ -39,8 +39,8 @@ const industriesData: Record<string, IndustryDetail> = {
     title: "High-Concurrence SaaS Infrastructure",
     description: "Construct multi-region serverless configurations capable of delivering instant page load times and zero-downtime database scaling under high request traffic.",
     metrics: [
-      { val: "+32%", label: "Capacity Scaling" },
-      { val: "<18ms", label: "Global Transaction API" },
+      { val: "High", label: "Capacity Scaling" },
+      { val: "Low", label: "Global Transaction API" },
       { val: "Enterprise", label: "Platform SLA Tier" }
     ],
     challenges: [
@@ -64,8 +64,8 @@ const industriesData: Record<string, IndustryDetail> = {
     description: "Consolidate fragmented patient vital files databases across clinics under strict performance standards with zero-trust protection.",
     metrics: [
       { val: "High", label: "Platform Uptime Score" },
-      { val: "-38%", label: "Clinical Registry Latency" },
-      { val: "21k", label: "Patient Ledgers Protected" }
+      { val: "Reduced", label: "Clinical Registry Latency" },
+      { val: "Secure", label: "Patient Ledgers Protected" }
     ],
     challenges: [
       { title: "Data Fragmentation", desc: "Patient records stored in isolated legacy structures, preventing real-time emergency clinical lookups." },
@@ -78,8 +78,8 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Zero-Trust Shield", details: "Validates digital credential access rights via multi-factor keys." },
       { name: "Clinical Ledger DB", details: "Saves encrypted record update history with immutable log stamps." }
     ],
-    caseStudyTitle: "Apex Health Diagnostics Portal",
-    caseStudyDesc: "Designed an integrated portal for a clinical group, reducing EMR retrieval speeds by 38% while securing records compliance."
+    caseStudyTitle: "Clinical Diagnostics Portal",
+    caseStudyDesc: "Designed an integrated portal for a clinical group, improving EMR retrieval speeds while securing clinical records."
   },
   "fintech": {
     id: "fintech",
@@ -87,8 +87,8 @@ const industriesData: Record<string, IndustryDetail> = {
     title: "Zero-Latency FinTech Payment Pipelines",
     description: "Build micro-transaction pipelines leveraging automated fraud detection, localized currencies tax calculations, and advanced security standards.",
     metrics: [
-      { val: "48k", label: "Transactions Securely Guided" },
-      { val: "4ms", label: "Fraud Check Indexing Speed" },
+      { val: "High Volume", label: "Transactions Securely Guided" },
+      { val: "Low", label: "Fraud Check Indexing Speed" },
       { val: "Optimal", label: "Routing Success Rate" }
     ],
     challenges: [
@@ -102,8 +102,8 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Payment Route Core", details: "Directs transaction to the optimal banking rail based on cost metrics." },
       { name: "Consolidated Ledger", details: "Updates client balances across multi-region databases with double-entry safety." }
     ],
-    caseStudyTitle: "Nexus Global Transaction Shield",
-    caseStudyDesc: "Constructed sub-second global payment interfaces for an enterprise investment group, protecting 48k transactions in annual pipelines."
+    caseStudyTitle: "Transaction Security Shield",
+    caseStudyDesc: "Constructed sub-second global payment interfaces for an enterprise investment group with secure transaction pipelines."
   },
   "education": {
     id: "education",
@@ -111,9 +111,9 @@ const industriesData: Record<string, IndustryDetail> = {
     title: "Synchronous University Learning Workspaces",
     description: "Launch real-time class hub interfaces enabling university students to coordinate files, video feeds, and workspace canvases simultaneously.",
     metrics: [
-      { val: "15k+", label: "Monthly Synchronous Learners" },
-      { val: "90ms", label: "Interactive Canvas Latency" },
-      { val: "+38%", label: "User NPS Score Gain" }
+      { val: "Scalable", label: "Monthly Synchronous Learners" },
+      { val: "Low", label: "Interactive Canvas Latency" },
+      { val: "Improved", label: "User Satisfaction" }
     ],
     challenges: [
       { title: "Real-time State De-sync", desc: "Multiple students writing to collaborative document boards simultaneously creating data overwrite conflicts." },
@@ -126,8 +126,8 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Edge Media Stream", details: "Distributes video packets dynamically based on local network bandwidth." },
       { name: "State Snapshot Cache", details: "Periodically saves canvas backups to Redis to restore states during disconnects." }
     ],
-    caseStudyTitle: "Global Class Hub Real-time Engine",
-    caseStudyDesc: "Optimized drawing board sync scripts for an international school network, delivering lag-free learning for 15k active students."
+    caseStudyTitle: "Real-time Learning Engine",
+    caseStudyDesc: "Optimized drawing board sync scripts for a school network, delivering lag-free learning for active students."
   },
   "retail": {
     id: "retail",
@@ -135,9 +135,9 @@ const industriesData: Record<string, IndustryDetail> = {
     title: "High-Converting Headless Retail Systems",
     description: "Establish fast, customizable storefront interfaces decoupled from inventory database monitors, optimizing conversion metrics.",
     metrics: [
-      { val: "+38%", label: "Checkout Conversion Rate Increase" },
-      { val: "1.2s", label: "First Contentful Paint Speed" },
-      { val: "+35%", label: "Server Payload Cost Reduction" }
+      { val: "Improved", label: "Checkout Conversion Rate" },
+      { val: "Fast", label: "First Contentful Paint Speed" },
+      { val: "Reduced", label: "Server Payload Cost" }
     ],
     challenges: [
       { title: "Inventory Cache Sync", desc: "Displaying items as active when stock drops to zero, leading to checkout refunds." },
@@ -150,8 +150,8 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Cart Engine API", details: "Calculates order discounts, taxes, and shipping rates in under 50ms." },
       { name: "Fulfillment Sync", details: "Updates warehouse dispatch logs and starts client shipping track." }
     ],
-    caseStudyTitle: "Omnichannel Commerce Hub Refactor",
-    caseStudyDesc: "Designed high-performance headless shop routes for an enterprise retailer, boosting checkout conversion ratios by 38%."
+    caseStudyTitle: "Headless Commerce Refactor",
+    caseStudyDesc: "Designed high-performance headless shop routes for an enterprise retailer, improving checkout conversion performance."
   },
   "manufacturing": {
     id: "manufacturing",
@@ -160,8 +160,8 @@ const industriesData: Record<string, IndustryDetail> = {
     description: "Orchestrate responsive diagnostic monitoring systems reading operational telemetry indicators from assembly line components.",
     metrics: [
       { val: "Enterprise", label: "Sensor Signal Delivery SLA" },
-      { val: "25k+", label: "Telemetry Points/Sec" },
-      { val: "-35%", label: "Maintenance Cost Overhead" }
+      { val: "High Volume", label: "Telemetry Points" },
+      { val: "Reduced", label: "Maintenance Cost Overhead" }
     ],
     challenges: [
       { title: "Signal Flooding Logs", desc: "Thousands of hardware sensors writing diagnostic state logs concurrently, blocking servers." },
@@ -184,8 +184,8 @@ const industriesData: Record<string, IndustryDetail> = {
     description: "Orchestrate real-time telemetry processing pipelines for power grid distributions and utility analytics.",
     metrics: [
       { val: "Enterprise", label: "Grid Uptime SLA" },
-      { val: "40k+", label: "Smart Meters Tracked" },
-      { val: "-35%", label: "Outage Duration Decreased" }
+      { val: "High Volume", label: "Smart Meters Tracked" },
+      { val: "Reduced", label: "Outage Duration" }
     ],
     challenges: [
       { title: "High-Frequency Pings", desc: "Thousands of smart meters sending electrical load packets concurrently, overloading traditional ingestion bases." },
@@ -198,7 +198,7 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Peak Load Analyser", details: "Evaluates grid demand trends dynamically using AI." },
       { name: "Dynamic Battery Route", details: "Triggers battery cells discharges during load constraints." }
     ],
-    caseStudyTitle: "Apex Utility Grid Optimization",
+    caseStudyTitle: "Utility Grid Optimization",
     caseStudyDesc: "Refactored load distribution code for a national utility network, cutting peak outages by 35% via predictive grid analytics."
   },
   "logistics": {
@@ -207,8 +207,8 @@ const industriesData: Record<string, IndustryDetail> = {
     title: "Autonomous Fleet Routing & Warehouse Sync",
     description: "Deploy sub-second route calculation engines and cargo tracking logs to optimize fleet delivery schedules.",
     metrics: [
-      { val: "18%", label: "Fuel Expenses Saved" },
-      { val: "12k", label: "Daily Shipments Logged" },
+      { val: "Reduced", label: "Fuel Expenses" },
+      { val: "High Volume", label: "Daily Shipments Logged" },
       { val: "Optimal", label: "On-Time Dispatch Rate" }
     ],
     challenges: [
@@ -222,7 +222,7 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Robot Dispatch Core", details: "Directs shelf movement speeds inside picking yards." },
       { name: "Delivery Ledger Log", details: "Notes dispatch completion to client ERP structures." }
     ],
-    caseStudyTitle: "Nexus LogiRoute Integration",
+    caseStudyTitle: "LogiRoute Integration",
     caseStudyDesc: "Built real-time transit sync engines for an international courier group, reducing delay occurrences by 40%."
   },
   "proptech": {
@@ -231,9 +231,9 @@ const industriesData: Record<string, IndustryDetail> = {
     title: "Decentralized Property Registries & Smart Leases",
     description: "Build high-speed real estate listings search engines and automated smart lease pipelines.",
     metrics: [
-      { val: "+35%", label: "Lead Capture Boost" },
-      { val: "15ms", label: "Query Execution Speed" },
-      { val: "24k", label: "Deals Secured via API" }
+      { val: "Improved", label: "Lead Capture" },
+      { val: "Low", label: "Query Execution Speed" },
+      { val: "High Volume", label: "Deals Secured via API" }
     ],
     challenges: [
       { title: "Heavy Listings Queries", desc: "Searching thousands of property records with dozens of geofence bounds timing out standard relational lookups." },
@@ -246,7 +246,7 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Credit Score Pull", details: "Validates client income records asynchronously." },
       { name: "Lease Ledger Lock", details: "Stores signed leasing agreements to secure log tables." }
     ],
-    caseStudyTitle: "Nexus Property Index Optimization",
+    caseStudyTitle: "Property Index Optimization",
     caseStudyDesc: "Optimized property listing indices, delivering search results under 15ms for 5k monthly users."
   },
   "automotive": {
@@ -256,8 +256,8 @@ const industriesData: Record<string, IndustryDetail> = {
     description: "Establish secure, low-latency pipelines for OTA firmware distributions and vehicle diagnostic telemetry.",
     metrics: [
       { val: "Enterprise", label: "OTA Firmware Installs" },
-      { val: "5k", label: "Connected Vehicles Audited" },
-      { val: "-35%", label: "Warranty Recalls Avoided" }
+      { val: "Multiple", label: "Connected Vehicles Audited" },
+      { val: "Reduced", label: "Warranty Recalls" }
     ],
     challenges: [
       { title: "Interrupted Flash Loops", desc: "Mobile network drops corrupting binary packages during car update installs, disabling units." },
@@ -279,8 +279,8 @@ const industriesData: Record<string, IndustryDetail> = {
     title: "Headless Content Management & Edge Streaming",
     description: "Deploy microservices supporting high-throughput content management and video indexing pipelines.",
     metrics: [
-      { val: "+35%", label: "Load Speeds Accelerated" },
-      { val: "85k", label: "Content Requests Checked Daily" },
+      { val: "Improved", label: "Load Speeds" },
+      { val: "High Volume", label: "Content Requests Processed" },
       { val: "Enterprise", label: "CDN Delivery Reliability" }
     ],
     challenges: [
@@ -294,7 +294,7 @@ const industriesData: Record<string, IndustryDetail> = {
       { name: "Edge CDN Cache", details: "Stores page contents directly on Edge cache layers globally." },
       { name: "Telemetry Viewer", details: "Tracks reader content choices asynchronously." }
     ],
-    caseStudyTitle: "Apex Headless Streaming Setup",
+    caseStudyTitle: "Headless Streaming Setup",
     caseStudyDesc: "Migrated static publishing pipelines to Edge networks, accelerating load speeds by 35% for a major news provider."
   }
 };
@@ -401,7 +401,7 @@ export default function IndustryPage({ params }: { params: Promise<{ id: string 
                   <Terminal size={14} /> telemetry warnings
                 </div>
                 <div className={styles.telemetryDesc}>
-                  Detected 3 compliance constraints. Click on the cards to compile real-time software resolution strategies.
+                  Detected 3 security constraints. Click on the cards to compile real-time software resolution strategies.
                 </div>
               </div>
             </div>

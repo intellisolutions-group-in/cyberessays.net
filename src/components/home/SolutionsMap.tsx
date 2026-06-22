@@ -145,8 +145,8 @@ export default function SolutionsMap() {
       icon: <Brain size={24} />,
       title: "Enterprise AI & Cognitive Systems",
       description: "Integrate LLMs, neural searches, custom fine-tuned agents, and automated data pipelines directly into your operational workflows.",
-      metric: "+35% ROI",
-      metricLabel: "Average automation productivity increase",
+      metric: "High Efficiency",
+      metricLabel: "Automation productivity focus",
       stack: ["PyTorch", "OpenAI API", "Hugging Face", "LangChain", "Vector DBs"],
       link: "/services/ai-solutions"
     },
@@ -156,8 +156,8 @@ export default function SolutionsMap() {
       icon: <Layers size={24} />,
       title: "High-Scale Multi-Tenant SaaS",
       description: "Build robust, secure, and lightning-fast SaaS products featuring user hierarchies, real-time analytics, and high concurrent scaling.",
-      metric: "<18ms",
-      metricLabel: "Average transaction response time",
+      metric: "Low Latency",
+      metricLabel: "Transaction response focus",
       stack: ["Next.js", "Node.js", "PostgreSQL", "API Gateway", "Redis"],
       link: "/services/saas-development"
     },
@@ -178,8 +178,8 @@ export default function SolutionsMap() {
       icon: <Smartphone size={24} />,
       title: "Premium Native & Cross-Platform Mobile",
       description: "Deliver highly responsive, animation-rich native applications for iOS and Android built on streamlined offline sync engines.",
-      metric: "4.9/5",
-      metricLabel: "Average App Store rating for client releases",
+      metric: "Quality Focus",
+      metricLabel: "App release quality standards",
       stack: ["React Native", "Flutter", "Swift", "Kotlin", "GraphQL"],
       link: "/services/mobile-apps"
     },
@@ -187,10 +187,10 @@ export default function SolutionsMap() {
       id: "cybersecurity",
       name: "Cybersecurity",
       icon: <ShieldAlert size={24} />,
-      title: "Zero-Trust Security & Compliance Architecture",
+      title: "Zero-Trust Security Architecture",
       description: "Protect client assets with automated penetration tests, vulnerability audits, zero-trust edge tunnels, and advanced access controls.",
       metric: "Hardened Security",
-      metricLabel: "Audit preparation and data integrity guaranteed",
+      metricLabel: "Audit preparation and data integrity focus",
       stack: ["IAM Systems", "OAuth 2.1", "Twingate", "Vault", "Cloudflare WAF"],
       link: "/services/cybersecurity"
     },
@@ -200,8 +200,8 @@ export default function SolutionsMap() {
       icon: <Terminal size={24} />,
       title: "Enterprise Systems Modernization",
       description: "Transition legacy core monolithic databases into robust, resilient microservice frameworks that support large concurrent request pipelines.",
-      metric: "-35% Overhead",
-      metricLabel: "Average maintenance operations overhead saved",
+      metric: "Reduced Overhead",
+      metricLabel: "Maintenance operations efficiency",
       stack: ["Go", "Java Spring", "Apache Kafka", "Docker", "gRPC"],
       link: "/services/enterprise-software"
     },
@@ -211,8 +211,8 @@ export default function SolutionsMap() {
       icon: <Palette size={24} />,
       title: "Luxury UX/UI & Comprehensive Design Systems",
       description: "Design state-of-the-art software systems that feel responsive, look premium, and maintain pixel-perfect design-to-development pipelines.",
-      metric: "+38% NPS",
-      metricLabel: "Improvement in end-user satisfaction indices",
+      metric: "Improved Satisfaction",
+      metricLabel: "End-user satisfaction focus",
       stack: ["Figma", "Stripe Style Guides", "Tailored Animations", "Prototyping"],
       link: "/services/product-design"
     },
@@ -222,8 +222,8 @@ export default function SolutionsMap() {
       icon: <Cpu size={24} />,
       title: "Continuous Automated Orchestration",
       description: "Establish robust CI/CD pipelines enabling developer teams to deploy features in minutes under strict health metrics monitoring.",
-      metric: "4 Min",
-      metricLabel: "Average build-to-deployment pipeline cycle",
+      metric: "Rapid Deploy",
+      metricLabel: "Build-to-deployment pipeline focus",
       stack: ["GitHub Actions", "Docker", "Prometheus", "Grafana", "ArgoCD"],
       link: "/services/devops"
     }

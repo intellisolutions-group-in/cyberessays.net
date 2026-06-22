@@ -226,28 +226,28 @@ export default function FintechPage() {
             <div style={{ background: "rgba(13, 18, 37, 0.3)", border: "var(--border-glass)", borderRadius: "12px", padding: "2.25rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-secondary)", marginBottom: "1rem" }}>
                 <ShieldCheck size={20} />
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Nexus Global Payments</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Payments Platform Lead</span>
               </div>
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", fontStyle: "italic", lineHeight: 1.6 }}>
                 &quot;Migrating our transaction pipelines to the multi-rail router decoupled our legacy clearing bottleneck completely, lowering end-to-end ledger latency under 5ms.&quot;
               </p>
               <div style={{ marginTop: "1.25rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "0.75rem" }}>
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Director of Platform Engineering</span>
-                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Cross-Border Operations Group</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Ananya Sharma</span>
+                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Director of Platform Engineering</span>
               </div>
             </div>
 
             <div style={{ background: "rgba(13, 18, 37, 0.3)", border: "var(--border-glass)", borderRadius: "12px", padding: "2.25rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-secondary)", marginBottom: "1rem" }}>
                 <Database size={20} />
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Aero Ledger Systems</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Core Infrastructure Lead</span>
               </div>
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", fontStyle: "italic", lineHeight: 1.6 }}>
-                &quot;The double-entry lock scheduler guarantees state consistency across regional PostgreSQL clusters even during sudden transaction spikes, keeping balance sync fails at zero.&quot;
+                &quot;The double-entry lock scheduler maintains state consistency across regional database clusters even during sudden transaction spikes.&quot;
               </p>
               <div style={{ marginTop: "1.25rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "0.75rem" }}>
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Vice President of Core Infra</span>
-                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Clearing & Settlement Networks</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Vikram Patel</span>
+                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Vice President of Core Infrastructure</span>
               </div>
             </div>
           </div>

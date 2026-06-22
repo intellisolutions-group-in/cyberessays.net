@@ -82,7 +82,7 @@ export default function DataAiPage() {
       id: 0,
       title: "Raw Data Ingest",
       status: "ACTIVE POLLING",
-      format: "JSON, CSV, PDF",
+      format: "JSON, CSV",
       desc: "Triggers continuously on new directory writes, parsing unstructured log data and aligning timestamp headers.",
       icon: <Server size={18} />,
       samplePayload: `{\n  "source": "s3://records-bucket",\n  "format": "JSON",\n  "file_size_kb": 240,\n  "raw_lines_parsed": 1200\n}`
@@ -305,7 +305,7 @@ export default function DataAiPage() {
           <div className={styles.caseCard}>
             <span className={styles.tagline}>Success Spotlight</span>
             <h2 className={styles.caseTitle}>
-              Apex Cognitive Parsing Migration
+              Cognitive Parsing Migration
             </h2>
             <p className={styles.caseDesc}>
               Engineered dynamic neural processing engines for a national registry database, achieving a 38% reduction in manual data entry timelines.

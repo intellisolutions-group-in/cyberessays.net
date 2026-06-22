@@ -30,7 +30,7 @@ export default function Navbar() {
                 <Link href="/services/api-design" className={styles.dropdownItem}>API Design & Integrations</Link>
                 <Link href="/services/qa-automation" className={styles.dropdownItem}>QA Automation & Performance</Link>
                 <Link href="/services/managed-support" className={styles.dropdownItem}>Managed Support</Link>
-                <Link href="/services/cybersecurity" className={styles.dropdownItem}>Cybersecurity & Compliance</Link>
+                <Link href="/services/cybersecurity" className={styles.dropdownItem}>Cybersecurity</Link>
                 <Link href="/services/data-ai" className={styles.dropdownItem}>Data & AI</Link>
                 <Link href="/services/ux-ui-design" className={styles.dropdownItem}>UX/UI & Product Design</Link>
               </div>

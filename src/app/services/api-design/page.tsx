@@ -345,7 +345,7 @@ type Mutation {
           <div className={styles.caseCard}>
             <span className={styles.tagline} style={{ color: "var(--accent-secondary)" }}>Success Spotlight</span>
             <h2 style={{ fontFamily: "var(--font-primary)", fontSize: "2.5rem", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em", marginTop: "1rem" }}>
-              Nexus Global API Gateway
+              Enterprise API Gateway
             </h2>
             <p style={{ margin: "1.5rem auto", fontSize: "1.05rem", color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: "650px" }}>
               Engineered high-performance REST and gRPC gateway routers managing massive transaction inflows with sub-15ms sync rates across regional zones.

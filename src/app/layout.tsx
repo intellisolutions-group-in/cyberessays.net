@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CyberEssays Digital Services - Digital Transformation Platform",
     description: "Enterprise-grade software engineering, AI solutions, and digital transformation for ambitious companies.",
-    url: "https://cyberessays.com",
+    url: "https://cyberessays.net",
     siteName: "CyberEssays Digital Services",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
   icons: {

@@ -267,7 +267,7 @@ export default function CloudMigrationsPage() {
           <div className={styles.caseCard}>
             <span className={styles.tagline}>Success Spotlight</span>
             <h2 className={styles.caseTitle}>
-              Apex Health Database Migration
+              Clinical Database Migration
             </h2>
             <p className={styles.caseDesc}>
               Successfully modernized legacy clinical patient datastores for a Tier-1 healthcare network, migrating thousands of records to AWS clusters with zero operational downtime.

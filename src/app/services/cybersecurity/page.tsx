@@ -97,7 +97,7 @@ export default function CybersecurityPage() {
           <span className={styles.tagline}>Zero-Trust Cybersecurity</span>
           <h1 className={styles.title}>Defensive Zero-Trust Network Architecture</h1>
           <p className={styles.desc}>
-            We insulate vital database structures and container pipelines behind cryptographic access guards, ensuring bulletproof compliance and continuous vulnerability hardening.
+            We insulate vital database structures and container pipelines behind cryptographic access guards, ensuring continuous vulnerability hardening.
           </p>
         </div>
 
@@ -237,7 +237,7 @@ export default function CybersecurityPage() {
           <div className={styles.caseCard}>
             <span className={styles.tagline} style={{ color: "var(--accent-secondary)" }}>Success Spotlight</span>
             <h2 style={{ fontFamily: "var(--font-primary)", fontSize: "2.5rem", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em", marginTop: "1rem" }}>
-              Apex Zero-Trust Security Portal
+              Zero-Trust Security Portal
             </h2>
             <p style={{ margin: "1.5rem auto", fontSize: "1.05rem", color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: "650px" }}>
               Constructed a secure, robust transaction pipeline, validating microservice token handshakes and protecting vital clinical records.

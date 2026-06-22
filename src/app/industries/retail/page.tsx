@@ -477,22 +477,22 @@ export default function RetailIndustryPage() {
                 &quot;Deploying these low-latency edge catalog synchronization structures cut our catalog sync delays from seconds to milliseconds, removing storefront stock desynchronization errors.&quot;
               </p>
               <div style={{ marginTop: "1rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "0.75rem" }}>
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>VP of Storefront Infrastructure</span>
-                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>CyberEssays Integration Group</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Priya Mehta</span>
+                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>VP of Storefront Infrastructure</span>
               </div>
             </div>
 
             <div style={{ background: "rgba(13, 18, 37, 0.3)", border: "var(--border-glass)", borderRadius: "12px", padding: "2rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-secondary)", marginBottom: "1rem" }}>
                 <Lock size={18} />
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Global Warehouse Director</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Warehouse Operations Director</span>
               </div>
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", fontStyle: "italic", lineHeight: 1.6 }}>
                 &quot;The row lock database triggers keep inventory tracking solid. We avoid double checkout errors even during heavy flash traffic surges.&quot;
               </p>
               <div style={{ marginTop: "1rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "0.75rem" }}>
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Director of Platform Engineering</span>
-                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Omnichannel Logistics Corp</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Rajesh Kumar</span>
+                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Director of Platform Engineering</span>
               </div>
             </div>
           </div>

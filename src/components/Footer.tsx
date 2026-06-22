@@ -82,15 +82,13 @@ export default function Footer() {
             <ul className={styles.linksList}>
               <li><Link href="/about" className={styles.link}>About Us</Link></li>
               <li><Link href="/case-studies" className={styles.link}>Case Studies</Link></li>
-              <li><Link href="/about" className={styles.link}>Global Impact</Link></li>
               <li><Link href="/contact" className={styles.link}>Careers</Link></li>
-              <li><Link href="/contact" className={styles.link}>Press Kit</Link></li>
             </ul>
           </div>
         </div>
 
         <div className={styles.bottomBar}>
-          <p>&copy; 2005-{new Date().getFullYear()} CyberEssays Digital Services. All rights reserved.</p>
+          <p>&copy; 2020-{new Date().getFullYear()} CyberEssays Digital Services. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
     },
     {
       param: "Engineering Standards",
-      iceText: "Automated regression testing, rigorous CI/CD deployments, and guaranteed high SLA metrics.",
+      iceText: "Automated regression testing, rigorous CI/CD deployments, and high SLA targets.",
       agencyText: "Manual testing cycles resulting in periodic production crashes and slow patches."
     },
     {

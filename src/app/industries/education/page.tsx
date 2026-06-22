@@ -197,28 +197,28 @@ export default function EducationPage() {
             <div style={{ background: "rgba(13, 18, 37, 0.3)", border: "var(--border-glass)", borderRadius: "12px", padding: "2.25rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-primary)", marginBottom: "1rem" }}>
                 <Compass size={20} />
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Apex Class Hub</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>Digital Learning Lead</span>
               </div>
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", fontStyle: "italic", lineHeight: 1.6 }}>
-                &quot;We scaled our synchronous university classrooms to support 15k active students concurrently, merging drawing delta strokes smoothly over web sockets.&quot;
+                &quot;We scaled our synchronous university classrooms to support large active student groups concurrently, merging drawing delta strokes smoothly over web sockets.&quot;
               </p>
               <div style={{ marginTop: "1.25rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "0.75rem" }}>
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Dean of Digital Systems</span>
-                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Virtual Academy Integration</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Deepa Nair</span>
+                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Dean of Digital Systems</span>
               </div>
             </div>
 
             <div style={{ background: "rgba(13, 18, 37, 0.3)", border: "var(--border-glass)", borderRadius: "12px", padding: "2.25rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-primary)", marginBottom: "1rem" }}>
                 <Users size={20} />
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>E-Learning Shards</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-secondary)" }}>EdTech Platform Lead</span>
               </div>
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", fontStyle: "italic", lineHeight: 1.6 }}>
                 &quot;Using isolated background worker threads removed layout lag on low-bandwidth mobile devices, allowing students to access canvases instantly.&quot;
               </p>
               <div style={{ marginTop: "1.25rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "0.75rem" }}>
-                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Chief Technology Officer</span>
-                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Collaborative Platforms Group</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fff", display: "block" }}>Arjun Iyer</span>
+                <span style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>Chief Technology Officer</span>
               </div>
             </div>
           </div>

@@ -554,7 +554,7 @@ export default function UxUiDesignPage() {
           <div className={styles.caseCard}>
             <span className={styles.tagline}>Success Spotlight</span>
             <h2 style={{ fontFamily: "var(--font-primary)", fontSize: "2.5rem", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em", marginTop: "1rem" }}>
-              Apex Creative Platform Refactor
+              Creative Platform Refactor
             </h2>
             <p style={{ margin: "1.5rem auto", fontSize: "1.05rem", color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: "650px" }}>
               Engineered a unified design system and client interface for a global media distribution company, reducing front-end development cycle timelines by 38%.

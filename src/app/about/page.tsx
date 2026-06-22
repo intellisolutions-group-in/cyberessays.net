@@ -88,16 +88,16 @@ export default function AboutPage() {
           
           <div className={styles.impactGrid}>
             <div className={styles.impactCard}>
-              <div className={styles.impactVal}>50+</div>
+              <div className={styles.impactVal}>Multiple</div>
               <div className={styles.impactLabel}>Enterprise Platforms Delivered</div>
             </div>
             <div className={styles.impactCard}>
-              <div className={styles.impactVal}>140k+</div>
-              <div className={styles.impactLabel}>Active Monthly Sessions Managed</div>
+              <div className={styles.impactVal}>High</div>
+              <div className={styles.impactLabel}>Availability Session Management</div>
             </div>
             <div className={styles.impactCard}>
-              <div className={styles.impactVal}>12k+</div>
-              <div className={styles.impactLabel}>Transactions Processed</div>
+              <div className={styles.impactVal}>Secure</div>
+              <div className={styles.impactLabel}>Transaction Processing</div>
             </div>
             <div className={styles.impactCard}>
               <div className={styles.impactVal}>Enterprise</div>

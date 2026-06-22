@@ -25,14 +25,14 @@ export default function CaseStudiesIndexPage() {
   const studies: StudyItem[] = [
     {
       id: "apex-health",
-      client: "Apex Health Ledger",
+      client: "Healthcare Sector",
       category: "healthcare",
       title: "Unified Clinical Data Platform",
-      description: "We consolidated fragmented electronic health records across 12 distinct regional hospitals into a secure zero-trust cloud data pipeline, optimizing query speeds and ensuring patient data safety.",
+      description: "We consolidated fragmented electronic health records across regional hospitals into a secure zero-trust cloud data pipeline, optimizing query speeds and ensuring patient data safety.",
       metrics: [
         { val: "Enterprise", label: "System Uptime" },
         { val: "Encrypted", label: "Data State" },
-        { val: "21k", label: "Patient Records Secured" }
+        { val: "Secure", label: "Patient Records Protected" }
       ],
       stack: ["AWS VPC Tunnels", "Zero-Trust Shield", "Clinical Ledger DB", "IAM Systems"],
       visual: (
@@ -58,14 +58,14 @@ export default function CaseStudiesIndexPage() {
     },
     {
       id: "nexus-saas",
-      client: "Nexus SaaS Engine",
+      client: "FinTech Sector",
       category: "saas",
       title: "Sub-Second Global Payment Routing Engine",
       description: "We engineered a low-latency transactions routing engine leveraging multi-region edge nodes, automating localized tax rules calculations and minimizing cart checkouts drop-off rates.",
       metrics: [
-        { val: "+38%", label: "Conversion Rate" },
-        { val: "18ms", label: "Transaction Speed" },
-        { val: "42k", label: "Annual Volume Routing" }
+        { val: "Improved", label: "Conversion Rate" },
+        { val: "Low", label: "Transaction Speed" },
+        { val: "High Volume", label: "Annual Volume Routing" }
       ],
       stack: ["Next.js Edge", "Go Microservices", "PostgreSQL Sharding", "API Gateway"],
       visual: (
@@ -101,8 +101,8 @@ export default function CaseStudiesIndexPage() {
       description: "Built a high-throughput IoT diagnostics log portal for a manufacturing plant, reading telemetry from factory line nodes and dropping conveyor breakdowns via predictive telemetry.",
       metrics: [
         { val: "Enterprise", label: "Sensor Signal SLA" },
-        { val: "25k+", label: "Telemetry Points/Sec" },
-        { val: "-35%", label: "Maintenance Cost Overhead" }
+        { val: "High Volume", label: "Telemetry Points" },
+        { val: "Reduced", label: "Maintenance Cost Overhead" }
       ],
       stack: ["Apache Kafka", "Kubernetes", "Prometheus", "Grafana", "Go Ingest"],
       visual: (
@@ -130,14 +130,14 @@ export default function CaseStudiesIndexPage() {
     },
     {
       id: "class-hub",
-      client: "Global Class Hub",
+      client: "Education Sector",
       category: "education",
       title: "Synchronous University Learning Workspaces",
-      description: "Optimized real-time drawing board sync scripts and WebSocket event delivery pipelines for an international school network, delivering lag-free learning for 15k active students.",
+      description: "Optimized real-time drawing board sync scripts and WebSocket event delivery pipelines for a school network, delivering lag-free learning for active students.",
       metrics: [
-        { val: "15k+", label: "Monthly Synchronous Learners" },
-        { val: "90ms", label: "Interactive Canvas Latency" },
-        { val: "+38%", label: "User NPS Score Gain" }
+        { val: "Scalable", label: "Monthly Synchronous Learners" },
+        { val: "Low", label: "Interactive Canvas Latency" },
+        { val: "Improved", label: "User Satisfaction" }
       ],
       stack: ["WebSockets", "CRDT Algorithms", "Redis Cache", "Node.js cluster"],
       visual: (
