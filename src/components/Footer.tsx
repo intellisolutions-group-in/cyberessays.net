@@ -28,8 +28,7 @@ export default function Footer() {
         <div className={styles.footerGrid}>
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo}>
-              <img src="/logo.ico" alt="CyberEssays Logo" style={{ height: "30px", width: "auto" }} />
-              <span>CyberEssays Digital Services</span>
+              <img src="/images/logo/logo-1.png" alt="CyberEssays Logo" style={{ height: "55px", width: "auto" }} />
             </Link>
             <p className={styles.brandDesc}>
               Enterprise-grade software engineering, AI solutions, and digital transformation for ambitious companies.
