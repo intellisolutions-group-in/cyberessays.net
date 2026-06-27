@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
-import { 
-  ArrowRight, ShieldCheck, CreditCard, Activity, 
+import {
+  ArrowRight, ShieldCheck, CreditCard, Activity,
   Sparkles, CheckCircle2
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -184,19 +184,12 @@ export default function CaseStudiesIndexPage() {
     }
   } as const;
 
-  const filterOptions = [
-    { id: "all", label: "All Cases" },
-    { id: "healthcare", label: "Healthcare" },
-    { id: "saas", label: "SaaS Platforms" },
-    { id: "fintech", label: "FinTech" },
-    { id: "education", label: "EdTech" },
-    { id: "manufacturing", label: "Industrial IoT" }
-  ] as const;
+
 
   return (
     <div className={styles.casePage}>
       <div className="container">
-        
+
         {/* Page Header */}
         <div className={styles.headerBlock}>
           <span className={styles.tagline}>
@@ -212,21 +205,10 @@ export default function CaseStudiesIndexPage() {
           </p>
         </div>
 
-        {/* Filter Navigation */}
-        <div className={styles.filterBar}>
-          {filterOptions.map((opt) => (
-            <button
-              key={opt.id}
-              className={`${styles.filterBtn} ${activeFilter === opt.id ? styles.activeFilterBtn : ""}`}
-              onClick={() => setActiveFilter(opt.id)}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
+
 
         {/* Case Studies Grid list */}
-        <motion.div 
+        <motion.div
           className={styles.studiesList}
           variants={containerVariants}
           initial="hidden"
@@ -250,10 +232,10 @@ export default function CaseStudiesIndexPage() {
                   <Sparkles size={12} style={{ marginRight: "0.25rem", verticalAlign: "middle" }} />
                   {study.client}
                 </div>
-                
+
                 <h3 className={styles.storyTitle}>{study.title}</h3>
                 <p className={styles.storyDesc}>{study.description}</p>
-                
+
                 <div className={styles.metricsGrid}>
                   {study.metrics.map((metric, idx) => (
                     <div key={idx} className={styles.metricItem}>

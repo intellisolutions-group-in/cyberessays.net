@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
-import { 
-  Brain, Layers, Cloud, Smartphone, ShieldCheck, 
+import {
+  Brain, Layers, Cloud, Smartphone, ShieldCheck,
   Terminal, Palette, Cpu, ArrowRight, Activity, Zap
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -186,19 +186,12 @@ export default function ServicesIndexPage() {
     }
   } as const;
 
-  const tabLabels = [
-    { id: "all", label: "All Offerings" },
-    { id: "ai", label: "AI & Neural Systems" },
-    { id: "dev", label: "Platform Engineering" },
-    { id: "cloud", label: "Cloud & DevOps" },
-    { id: "security", label: "Security & QA" },
-    { id: "design", label: "UX/UI Design" }
-  ] as const;
+
 
   return (
     <div className={styles.servicesPage}>
       <div className="container">
-        
+
         {/* Page Hero Header */}
         <div className={styles.headerBlock}>
           <span className={styles.tagline}>
@@ -214,21 +207,10 @@ export default function ServicesIndexPage() {
           </p>
         </div>
 
-        {/* Tab Filters */}
-        <div className={styles.filterBar}>
-          {tabLabels.map((tab) => (
-            <button
-              key={tab.id}
-              className={`${styles.filterBtn} ${activeTab === tab.id ? styles.activeFilterBtn : ""}`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+
 
         {/* Bento Grid */}
-        <motion.div 
+        <motion.div
           className={styles.bentoGrid}
           variants={containerVariants}
           initial="hidden"
@@ -236,8 +218,8 @@ export default function ServicesIndexPage() {
           key={activeTab}
         >
           {filteredServices.map((service) => (
-            <motion.div 
-              key={service.id} 
+            <motion.div
+              key={service.id}
               className={styles.bentoCard}
               variants={itemVariants}
               whileHover={{ y: -6 }}
