@@ -14,7 +14,7 @@ export default function Navbar() {
       <div className={styles.navWrapper}>
         <nav className={styles.navbar}>
           <Link href="/" className={styles.logo}>
-            <img src="/images/logo/logo-1.png" alt="CyberEssays Logo" style={{ height: "55px", width: "auto" }} />
+            <img src="/images/logo/logo-01.png" alt="CyberEssays Logo" style={{ width: "auto" }} />
           </Link>
 
           <ul className={styles.navLinks}>

@@ -28,7 +28,7 @@ export default function Footer() {
         <div className={styles.footerGrid}>
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo}>
-              <img src="/images/logo/logo-1.png" alt="CyberEssays Logo" style={{ height: "55px", width: "auto" }} />
+              <img src="/images/logo/logo-01.png" alt="CyberEssays Logo" style={{ width: "auto" }} />
             </Link>
             <p className={styles.brandDesc}>
               Enterprise-grade software engineering, AI solutions, and digital transformation for ambitious companies.
